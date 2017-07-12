@@ -1,0 +1,247 @@
+<section class="slider-section">
+  <div>
+    <div class="banner-images">
+      <%= link_to image_tag("banner_img.png", alt: "banner_image"), { class: "img-responsive"} %>
+      <p class="slider-text full-width">
+        "WE ARE TRANSFORMING THE WAY YOU MAKE REAL ESTATE DECISIONS AND CONNECT WITH INDUSTRY PROFESSIONALS"
+      </p>
+      <div class="full-width">
+        <div class="detail-form">
+          <div class="onform-margin"> 
+            <div class="form-bg-color">
+              <%= form_tag('/search') do %>
+
+                <div class="form-heading">
+                  <p>Find Your Dream Home</p>
+                </div>
+
+                <div class="row">
+
+                  <div class="form-group col-md-4 col-xs-12 col-sm-4">
+                    <%= label_tag :LOCATION  %>
+                    <%= text_field_tag :location, nil, placeholder: "Enter Location", class: 'form-control' %>
+                  </div>
+
+                  <div class="form-group col-md-4 col-xs-12 col-sm-4">
+                    <%= label_tag :TYPE %>
+                    <div class="dropdown expensive">
+                      <%= select_tag :type, options_from_collection_for_select(PropertyType.all, 'id', 'name'), prompt: 'Select type', class: 'form-control' %>
+                      <span class="caret"></span>             
+                    </div>
+                  </div>
+
+                  <div class="form-group col-md-4 col-xs-12 col-sm-4">
+                    <%= label_tag "SORT BY" %>
+                    <div class="dropdown sort-by">
+                      <%= select_tag :sort, options_for_select([ "Most Expensive", "Least Expensive" ], "Most Expensive"), class: 'form-control' %>
+                      <span class="caret"></span>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="row second-fields">
+
+                  <div class="form-group col-md-2 col-xs-12 col-sm-2">
+                    <%= label_tag :BEDROOMS %>
+                    <div class="dropdown room_select">
+                      <%= select_tag :bedroom, options_for_select(options_for_bed_and_bath), prompt: 'Any', class: 'form-control' %>
+                      <span class="caret"></span>
+                    </div>
+                  </div>
+
+                  <div class="form-group col-md-2 col-xs-12 col-sm-2">
+                    <%= label_tag :Bathrooms %>
+                    <div class="dropdown room_select">
+                      <%= select_tag :bathroom, options_for_select(options_for_bed_and_bath), prompt: 'Any', class: 'form-control' %>   
+                      <span class="caret"></span>        
+                    </div>
+                  </div>
+
+                  <div class="form-group col-md-2 col-xs-12 col-sm-2">
+                    <%= label_tag "MINIMUM PRICE" %>
+                    <%= text_field_tag :min_price, nil, placeholder: "Min Price", class: 'form-control' %>
+                  </div>
+
+                  <div class="form-group col-md-2 col-xs-12 col-sm-2">
+                    <%= label_tag "MAXIMUM PRICE" %>
+                    <%= text_field_tag :max_price, nil, placeholder: "Max Price", class: 'form-control' %>
+                  </div>
+
+                  <div class="col-md-4 col-xs-12 col-sm-4">
+                    <button type="submit" class="btn btn-default search-property-btn">Search property Now!</button>                  
+                  </div>
+                </div>          
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="property-section">
+  <div class="full-width">
+    <ul>
+      <li class="">
+        <div class="property-image">
+          <%= image_tag("img2.png", alt: "property-image1") %>
+          <p class="property-head">
+            What is your home Worth
+          </p>
+        </div>
+
+        <div class="property-detail">
+          <p>
+            Get a FREE home valuation in less than a minute with the same data real estate agents use!
+          </p>
+        </div>
+      </li>
+
+      <li class="">
+        <div class="property-image">
+          <%= image_tag("img1.png", alt: "property-image1") %>
+          <p class="property-head">
+            sell your home
+          </p>
+        </div>
+
+        <div class="property-detail">
+          <p>
+            BrokerFreeRE offers real estate industry level service at a fraction of the cost! Need additional help ? 
+            Talk to a licensed real estate agent on demand for free!
+          </p>
+        </div>
+      </li>
+
+      <li class="">
+        <div class="property-image">
+          <%= image_tag("img3.png", alt: "property-image1") %>
+          <p class="property-head">
+            buy your home
+          </p>
+        </div>
+
+        <div class="property-detail">
+          <p>
+            Search, message sellers, and submit offers for FREE! Need additional help? 
+            Talk to a licensed real estate agent and get help with a contract to purchase on demand for free!
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<div class= "clear"></div>
+<section class="about-section">
+
+  <div class="full-width">
+
+    <div class="row about-header">
+
+      <div class="col-md-6 col-xs-12 col-sm-6">
+
+        <p class="about-heading">
+          WHO IS BrokerFreeRE?
+        </p>
+
+        <p class="about-description">
+          We are two real estate professionals who had an idea to bring the home buying and selling process into the 21st Century. You get all the bells and whistles of working with a licensed real estate agent at 1% of the cost. We offer the convenience of conducting real estate transactions from any computer or mobile device with Internet access. Real estate transactions are facilitated by the buyer and seller with optional consultation from licensed real estate professionals and supported via real time access to tutorials, project management tools, CRM, legal documents, MLS/marketing syndication, mortgage lenders, title companies, inspectors, lawyers, and other industry service providers
+        </p>
+
+        <%= link_to 'Read More About US',"#", { class: "more-about-link" } %>
+      </div>
+
+      <div class="col-md-6 col-xs-12 col-sm-6 about-img">
+        <%= image_tag("about-img.png") %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonial-section">
+  <div class="full-width">
+
+    <div class="margin-left-right">
+
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+
+          <div class="item active">
+            <p class="testimonial-heading">first some word from our customer</p>
+            <p class="testimonial-paragraph">We are two real estate professionals who had an idea to bring the home buying and selling process into the 21st Century. You get all the bells and whistles of working with a licensed real estate agent at 1% of the cost.</p>
+            <div class="testimonial-img">
+              <%= image_tag("comment.png", alt: "comment_img") %>
+            </div>
+            <p class="testimonial-name">Mitchell Warner</p>
+            <p class="testimonial-city">Sydney, Austraila</p>
+          </div>
+
+          <div class="item">
+
+            <p class="testimonial-heading">second some word from our customer</p>
+            <p class="testimonial-paragraph">We are two real estate professionals who had an idea to bring the home buying and selling process into the 21st Century. You get all the bells and whistles of working with a licensed real estate agent at 1% of the cost.</p>
+
+            <div class="testimonial-img">
+              <%= image_tag("comment.png", alt: "comment_img") %>
+            </div>
+
+            <p class="testimonial-name">Mitchell Warner</p>
+            <p class="testimonial-city">Sydney, Austraila</p>
+          </div>
+
+          <div class="item">
+
+            <p class="testimonial-heading">third some word from our customer</p>
+            <p class="testimonial-paragraph">We are two real estate professionals who had an idea to bring the home buying and selling process into the 21st Century. You get all the bells and whistles of working with a licensed real estate agent at 1% of the cost.</p>
+
+            <div class="testimonial-img">
+              <%= image_tag("comment.png", alt: "comment_img") %>
+            </div>
+
+            <p class="testimonial-name">Mitchell Warner</p>
+            <p class="testimonial-city">Sydney, Austraila</p>
+          </div>
+
+          <div class="item">
+            <p class="testimonial-heading">fourth some word from our customer</p>
+            <p class="testimonial-paragraph">We are two real estate professionals who had an idea to bring the home buying and selling process into the 21st Century. You get all the bells and whistles of working with a licensed real estate agent at 1% of the cost.</p>
+
+            <div class="testimonial-img">
+              <%= image_tag("comment.png", alt: "comment_img") %>
+            </div>
+
+            <p class="testimonial-name">Mitchell Warner</p>
+            <p class="testimonial-city">Sydney, Austraila</p>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="second-slider">
+  <div class="full-width">
+    <div class="slider4">
+      <div class="slide"><%= image_tag("owl-slider-img1.png")%></div>
+      <div class="slide"><%= image_tag("owl-slider-img2.png")%></div>
+      <div class="slide"><%= image_tag("owl-slider-img3.png")%></div>
+      <div class="slide"><%= image_tag("owl-slider-img4.png")%></div>     
+    </div>
+  </div>
+</section>
+
+<script type="text/javascript">
+  
+</script>

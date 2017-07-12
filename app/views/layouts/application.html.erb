@@ -2,13 +2,26 @@
 <html>
   <head>
     <title>BrokerFree</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700" rel="stylesheet"> 
     <%= csrf_meta_tags %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  
   <body>
+    <%= render 'layouts/header' %>
     <%= yield %>
+    <footer>
+      <%= render 'layouts/footer' %>
+      <div class="copyright">
+        <img src="/assets/footer-img.png" alt="copyright-ng-img" class="img-responsive">
+        <hr class="full-width copyright-border">
+        <p class="copyright-text">
+          Copyright 2017 | BrokerFree RE | All rights reserved
+        </p>
+      </div>
+    </footer>
+
   </body>
 </html>

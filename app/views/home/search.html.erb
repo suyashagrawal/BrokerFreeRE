@@ -1,0 +1,5 @@
+<strong>Search Results</strong>
+<%= @properties.each do |property| %>
+  <%= property.name %>
+  <%= property.location.city %>
+<% end %>
