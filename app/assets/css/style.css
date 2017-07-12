@@ -124,13 +124,13 @@ header {
 	width: 100%;
 }
 .search-property-btn {	
-    padding: 17px 10px;    
-    border: 0;
-    color: #fff;
-    font-size: 18px;
-    text-transform: uppercase;
-    background-color: #92ad12;
-    border-radius: 0px;
+  padding: 17px 10px;    
+  border: 0;
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+  background-color: #92ad12;
+  border-radius: 0px;
 }
 .search-property-btn:hover, .search-property-btn:focus, .search-property-btn:active, .btn-default:active  {
 	background-color: #92ad12;
@@ -379,7 +379,7 @@ footer .copyright img {
 .login ul{
 	background-color: #57899a;
 	display: inline-block;
-	width: 86%;
+	width: 84%;
 	padding: 0;
 	float: right;
 }
@@ -631,4 +631,16 @@ input::-moz-placeholder { /* Firefox 19+ */
 input:-moz-placeholder { /* Firefox 4 - 18 */
   color: #505050 !important;
   opacity: 1;
+}
+.btn-default:active:hover, 
+.btn-default.active:hover, 
+.open > .dropdown-toggle.btn-default:hover, 
+.btn-default:active:focus, 
+.btn-default.active:focus, 
+.open > .dropdown-toggle.btn-default:focus, 
+.btn-default.focus:active, 
+.btn-default.active.focus, 
+.open > .dropdown-toggle.btn-default.focus {
+	background-color: #92ad12 !important;
+	color: #fff;
 }
