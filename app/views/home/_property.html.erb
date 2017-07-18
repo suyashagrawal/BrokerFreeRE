@@ -16,7 +16,7 @@
       <h3> 17 Apartment of Type A</h3>
       <p class="address">
         <i class="fa fa-map-marker"></i>
-        <%= property.location.address_line1.concat(', ', property.location.city) %>
+        <%= property.location.full_address if property.location.present? %>
       </p>
       <p class="content">
         <%= property.description.truncate(370, separator: '...') %>
@@ -25,9 +25,9 @@
     
     <ul class="property-feature">
       <li><i class="fa fa-building"></i>6</li>
-      <li><i class="fa fa-bed"></i><%=property.full_bedrooms.to_i + property.partial_bedrooms.to_i %></li>
-      <li><i class="fa fa-street-view"></i><%=property.full_baths.to_i + property.partial_baths.to_i %></li>
-      <li><i class="fa fa-car"></i><%=property.additonal_feature.parking_count.to_i%></li>
+      <li><i class="fa fa-bed"></i><%= property.full_bedrooms.to_i + property.partial_bedrooms.to_i %></li>
+      <li><i class="fa fa-street-view"></i><%= property.full_baths.to_i + property.partial_baths.to_i %></li>
+      <li><i class="fa fa-car"></i><%= property.additonal_feature.parking_count.to_i %></li>
     </ul>
   </div>
 </div>

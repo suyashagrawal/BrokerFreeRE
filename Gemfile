@@ -39,9 +39,10 @@ gem 'twitter-bootstrap-rails'
 
 gem 'font-awesome-rails'
 
-gem 'kaminari'
+gem 'kaminari-bootstrap', '~> 3.0.1'
 
-gem 'mini_magick'
+gem "mini_magick"
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
