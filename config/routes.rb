@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  post '/search', to: 'home#search', as: 'search'
+  get '/search', to: 'home#search', as: 'search'
   root "home#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

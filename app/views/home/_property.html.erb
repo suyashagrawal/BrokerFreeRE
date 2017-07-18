@@ -1,0 +1,33 @@
+<div class="search-property">
+  <div class="col-md-6 col-xs-12 col-sm-6">
+    <div class="search-property-img">
+      <% if property.pictures.first.try(:picture).present? %>
+        <%= image_tag property.pictures.first.try(:picture), class: "img-responsive"  %>
+      <% end  %>
+      <% if property.rent.present? %>
+        <p class="property-status">Rent</p>
+        <p class="property-price"><%= property.rent_per_month %>/<span>month</span></p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-xs-12 col-sm-6 search-property-border">
+    <div class="search-property-content">
+      <h3> 17 Apartment of Type A</h3>
+      <p class="address">
+        <i class="fa fa-map-marker"></i>
+        <%= property.location.address_line1.concat(', ', property.location.city) %>
+      </p>
+      <p class="content">
+        <%= property.description.truncate(370, separator: '...') %>
+      </p>
+    </div>
+    
+    <ul class="property-feature">
+      <li><i class="fa fa-building"></i>6</li>
+      <li><i class="fa fa-bed"></i><%=property.full_bedrooms.to_i + property.partial_bedrooms.to_i %></li>
+      <li><i class="fa fa-street-view"></i><%=property.full_baths.to_i + property.partial_baths.to_i %></li>
+      <li><i class="fa fa-car"></i><%=property.additonal_feature.parking_count.to_i%></li>
+    </ul>
+  </div>
+</div>

@@ -39,6 +39,10 @@ gem 'twitter-bootstrap-rails'
 
 gem 'font-awesome-rails'
 
+gem 'kaminari'
+
+gem 'mini_magick'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -48,6 +52,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'pry'
 end
 
 group :development do

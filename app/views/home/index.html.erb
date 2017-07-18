@@ -3,76 +3,13 @@
     <div class="banner-images">
       <%= link_to image_tag("banner_img.png", alt: "banner_image"), { class: "img-responsive"} %>
       <p class="slider-text full-width">
-        "WE ARE TRANSFORMING THE WAY YOU MAKE REAL ESTATE DECISIONS AND CONNECT WITH INDUSTRY PROFESSIONALS"
+        "WE ARE TRANSFORMING THE WAY YOU BUY AND SELL REAL ESTATE"
       </p>
       <div class="full-width">
         <div class="detail-form">
           <div class="form-margin"> 
             <div class="form-bg-color">
-              <%= form_tag('/search') do %>
-
-                <div class="form-heading">
-                  <p>Find Your Dream Home</p>
-                </div>
-
-                <div class="row">
-
-                  <div class="form-group col-md-4 col-xs-12 col-sm-4">
-                    <%= label_tag :LOCATION  %>
-                    <%= text_field_tag :location, nil, placeholder: "Enter Location", class: 'form-control' %>
-                  </div>
-
-                  <div class="form-group col-md-4 col-xs-12 col-sm-4">
-                    <%= label_tag :TYPE %>
-                    <div class="dropdown expensive">
-                      <%= select_tag :type, options_from_collection_for_select(PropertyType.all, 'id', 'name'), prompt: 'Select type', class: 'form-control' %>
-                      <span class="caret"></span>             
-                    </div>
-                  </div>
-
-                  <div class="form-group col-md-4 col-xs-12 col-sm-4">
-                    <%= label_tag "SORT BY" %>
-                    <div class="dropdown sort-by">
-                      <%= select_tag :sort, options_for_select([ "Most Expensive", "Least Expensive" ], "Most Expensive"), class: 'form-control' %>
-                      <span class="caret"></span>
-                    </div>
-                  </div>
-
-                </div>
-
-                <div class="row second-fields">
-
-                  <div class="form-group col-md-2 col-xs-12 col-sm-2">
-                    <%= label_tag :BEDROOMS %>
-                    <div class="dropdown room_select">
-                      <%= select_tag :bedroom, options_for_select(options_for_bed_and_bath), prompt: 'Any', class: 'form-control' %>
-                      <span class="caret"></span>
-                    </div>
-                  </div>
-
-                  <div class="form-group col-md-2 col-xs-12 col-sm-2">
-                    <%= label_tag :Bathrooms %>
-                    <div class="dropdown room_select">
-                      <%= select_tag :bathroom, options_for_select(options_for_bed_and_bath), prompt: 'Any', class: 'form-control' %>   
-                      <span class="caret"></span>        
-                    </div>
-                  </div>
-
-                  <div class="form-group col-md-2 col-xs-12 col-sm-2">
-                    <%= label_tag "MINIMUM PRICE" %>
-                    <%= text_field_tag :min_price, nil, placeholder: "Min Price", class: 'form-control' %>
-                  </div>
-
-                  <div class="form-group col-md-2 col-xs-12 col-sm-2">
-                    <%= label_tag "MAXIMUM PRICE" %>
-                    <%= text_field_tag :max_price, nil, placeholder: "Max Price", class: 'form-control' %>
-                  </div>
-
-                  <div class="col-md-4 col-xs-12 col-sm-4">
-                    <button type="submit" class="btn btn-default search-property-btn">Search property Now!</button>                  
-                  </div>
-                </div>          
-              <% end %>
+              <%= render 'form' %>
             </div>
           </div>
         </div>
@@ -88,7 +25,7 @@
         <div class="property-image">
           <%= image_tag("img2.png", alt: "property-image1") %>
           <p class="property-head">
-            What is your home Worth
+            What is your home worth
           </p>
         </div>
 
@@ -148,7 +85,7 @@
         </p>
 
         <p class="about-description">
-          We are two real estate professionals who had an idea to bring the home buying and selling process into the 21st Century. You get all the bells and whistles of working with a licensed real estate agent at 1% of the cost. We offer the convenience of conducting real estate transactions from any computer or mobile device with Internet access. Real estate transactions are facilitated by the buyer and seller with optional consultation from licensed real estate professionals and supported via real time access to tutorials, project management tools, CRM, legal documents, MLS/marketing syndication, mortgage lenders, title companies, inspectors, lawyers, and other industry service providers
+          We are two real estate professionals who had an idea to bring the home buying and selling process into the 21st Century. You get all the bells and whistles of working with a licensed real estate agent at 1% of the cost. We offer the convenience of conducting real estate transactions from any computer or mobile device with Internet access. Real estate transactions are facilitated by the buyer and seller with optional consultation from licensed real estate professionals and supported via real time access to tutorials, project management tools, CRM, legal documents, MLS/marketing syndication, mortgage lenders, title companies, inspectors, lawyers, and other industry service providers.
         </p>
 
         <%= link_to 'Read More About US',"#", { class: "more-about-link" } %>
@@ -234,10 +171,10 @@
 <section class="second-slider">
   <div class="full-width">
     <div class="slider4">
-      <div class="slide"><%= image_tag("owl-slider-img1.png")%></div>
-      <div class="slide"><%= image_tag("owl-slider-img2.png")%></div>
-      <div class="slide"><%= image_tag("owl-slider-img3.png")%></div>
-      <div class="slide"><%= image_tag("owl-slider-img4.png")%></div>     
+      <div class="slide"><%= image_tag("owl-slider-img1.png") %></div>
+      <div class="slide"><%= image_tag("owl-slider-img2.png") %></div>
+      <div class="slide slider-img3"><%= image_tag("owl-slider-img3.png") %></div>
+      <div class="slide"><%= image_tag("owl-slider-img4.png") %></div>     
     </div>
   </div>
 </section>

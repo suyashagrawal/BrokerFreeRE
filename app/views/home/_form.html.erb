@@ -1,0 +1,65 @@
+<script src="autocomplete_search_form.js"></script> 
+<%= form_tag('/search', method: :get) do %>
+
+  <div class="form-heading">
+    <p>Find Your Dream Home</p>
+  </div>
+
+  <div class="row">
+
+    <div class="form-group col-md-4 col-xs-12 col-sm-4">
+      <%= label_tag :location  %>
+      <%= text_field_tag :location, nil, placeholder: "Address 1, Address 2, City, State, Zip Code", class: 'form-control' %>
+    </div>
+
+    <div class="form-group col-md-4 col-xs-12 col-sm-4">
+      <%= label_tag :type %>
+      <div class="dropdown expensive">
+        <%= select_tag :type, options_for_select(PropertyType.all.map(&:name)), prompt: 'Select type', class: 'form-control' %>
+        <span class="caret"></span>             
+      </div>
+    </div>
+
+    <div class="form-group col-md-4 col-xs-12 col-sm-4">
+      <%= label_tag :sort_by %>
+      <div class="dropdown sort-by">
+        <%= select_tag :sort, options_for_select([ "Most Expensive", "Least Expensive" ], "Most Expensive"), class: 'form-control' %>
+        <span class="caret"></span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row second-fields">
+
+    <div class="form-group col-md-2 col-xs-12 col-sm-2">
+      <%= label_tag :bedrooms %>
+      <div class="dropdown room_select">
+        <%= select_tag :bedroom, options_for_select(options_for_bed_and_bath), prompt: 'Any', class: 'form-control' %>
+        <span class="caret"></span>
+      </div>
+    </div>
+
+    <div class="form-group col-md-2 col-xs-12 col-sm-2">
+      <%= label_tag :bathrooms %>
+      <div class="dropdown room_select">
+        <%= select_tag :bath, options_for_select(options_for_bed_and_bath), prompt: 'Any', class: 'form-control' %>   
+        <span class="caret"></span>        
+      </div>
+    </div>
+
+    <div class="form-group col-md-2 col-xs-12 col-sm-2">
+      <%= label_tag "minimum price" %>
+      <%= text_field_tag :min_price, nil, placeholder: "Min Price", class: 'form-control' %>
+    </div>
+
+    <div class="form-group col-md-2 col-xs-12 col-sm-2">
+      <%= label_tag "maximum price" %>
+      <%= text_field_tag :max_price, nil, placeholder: "Max Price", class: 'form-control' %>
+    </div>
+
+    <div class="col-md-4 col-xs-12 col-sm-4">
+      <%= button_tag 'Search property Now!', type: 'submit', class: 'btn btn-default search-property-btn' %>
+    </div>
+  </div>          
+<% end %>

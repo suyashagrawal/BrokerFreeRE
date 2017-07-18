@@ -3,6 +3,6 @@ class HomeController < ApplicationController
   end
 
   def search
-    redirect_to root_path
+    @properties = Property.search params
   end
 end

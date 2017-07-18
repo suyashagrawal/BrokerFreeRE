@@ -12,15 +12,11 @@
             <span class="icon-bar"></span>
           </button>        
         </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navigation" id="bs-example-navbar-collapse-1">
+        <div class="row">
           <div class="col-md-2 col-sm-3 col-xs-12">
-            <%= link_to image_tag("logo.png", alt: "logo_image"), "#", { class: 'navbar-brand' } %>
+            <%= link_to image_tag("logo.png", alt: "logo_image"), "#{root_url}", { class: 'navbar-brand logo' } %>
           </div>
-
-          <!-- social section -->
-          <div class="col-md-9 col-sm-9 col-xs-12">
+          <div class="col-md-10">
             <div class="social-icons">
               <ul>
                 <li>
@@ -34,34 +30,38 @@
                 </li>
               </ul>
             </div>
-
             <!-- User Section -->
-            <div class="login">
-              <ul>
-                <li>
-                  <a href="#"><i class="fa fa-sign-in"></i>Login</a>
-                </li>
-                <li>
-                  <a href="#"><i class="fa fa-user"></i>Sign Up</a>
-                </li>
-              </ul>
+            <div class="login">              
+              <div class="col-md-6 col-xs-6 col-sm-6">
+                <a href="#"><i class="fa fa-sign-in"></i>Login</a>
+              </div>
+              <div class="col-md-6 col-xs-6 col-sm-6">
+                <a href="#"><i class="fa fa-user"></i>Sign Up</a>
+              </div>              
             </div>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->          
+        </div>
+
+        <div class="collapse navbar-collapse navigation" id="bs-example-navbar-collapse-1">
+          <!-- social section -->
+          <div class="col-md-12 col-sm-12 col-xs-12">           
 
             <!-- navigation bar -->
             <ul class="nav navbar-nav">
               <li class="active">
-                <a href="#">
-                  Home 
+                <%= link_to root_url do %>
+                  Home
                   <span class="sr-only">(current)</span>
-                </a>
+                <% end %>
               </li>
-              <li><a href="#">Buyer</a></li>
-              <li><a href="#">Seller</a></li>
-              <li><a href="#">How it works</a></li>
-              <li><a href="#">Search</a></li>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Agents</a></li>
-              <li><a href="#">Blog</a></li>       
+              <li><%= link_to "Buyer" %></li>
+              <li><%= link_to "Seller" %></li>
+              <li><%= link_to "How It Works" %></li>
+              <li><%= link_to "Search" %></li>
+              <li><%= link_to "Contact Us" %></li>
+              <li><%= link_to "Agents" %></li>
+              <li><%= link_to "Blog" %></li>       
             </ul>
 
           </div>          
