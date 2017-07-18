@@ -10,12 +10,17 @@ class Property < ApplicationRecord
 
   # validations  
   validates :full_bedrooms, :full_baths, :price, :status, :Total_sq_feet_area, presence: true
+  
+  # results per page
+  paginates_per 5
 
   # rails_admin
   rails_admin do
    exclude_fields :interior_feature, :additonal_feature, :pictures
   end
 
+  scope :rent, -> { where(rent: true) }
+  scope :sale, -> { where(sale: true) }
 
   def self.search params
     self.by_type(params[:type])
@@ -23,6 +28,7 @@ class Property < ApplicationRecord
     .by_bedroom(params[:bedroom])
     .by_bathroom(params[:bath])
     .by_location(params[:location])
+    .sorting(params[:sort])
   end
 
   def self.by_type type
@@ -45,6 +51,10 @@ class Property < ApplicationRecord
   end
 
   def self.by_location location_string
-    location_string.present? ? joins(:location).where("concat_ws(' ' , locations.address_line1, locations.address_line2, locations.zipcode, locations.city, locations.country) LIKE ?", "%#{location_string}%") : joins(:location).all
+    location_string.present? ? joins(:location).where("lower(concat_ws(' ' , locations.address_line1, locations.address_line2, locations.zipcode, locations.city, locations.country)) LIKE ?", "%#{location_string.downcase}%") : joins(:location).all
+  end
+
+  def self.sorting sort_type
+    sort_type == "Least Expensive" ? order(:price) : order(:price).reverse_order
   end
 end
