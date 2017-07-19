@@ -1,0 +1,81 @@
+<!-- Header-bg -->
+<div class="header-bg">
+  <%= image_tag "header-bg.jpg" %>
+</div>
+
+<!-- Property details -->
+<div class="container">
+  <div class="property-heading">
+    <h2>Property Details</h2>
+  </div>
+  <div class="property-details">
+    <div class="col-md-8 col-sm-8 col-xs-12 pd-left">
+      <div class="property-add">
+        <div class="col-md-9 col-sm-9 pd-none">
+          <h2><%= @property.location.full_address %></h2>
+          <p class="address">
+            <span class="fa fa-home green-check"></span>
+            <span>&nbsp; <%= @property.location.address_line1 %> &nbsp;</span>
+            <span class="fa fa-map-marker green-check">&nbsp;</span>
+            <span><%= @property.location.country %></span>
+          </p>
+        </div>
+        <div class="col-md-3 col-sm-3 pd-none text-right">
+          <h2>$<%= @property.price %></h2>
+          <div class="status">Status <span class="fa fa-check status-check-bg"></span></div>
+        </div> 
+      </div>
+
+      <!-- Main Image -->
+      <div class="slider">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <%= image_tag @property.pictures.first.try(:picture), class: "img-responsive" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Enquiry Form -->
+    <%= render 'enquiry_form' %>
+
+    <!-- Property Information -->
+    <div class="col-md-8 col-sm-8 col-xs-12 pd-left">
+      <%= render 'property_info' %>
+
+      <!-- remarks -->
+      <div class="remarks">
+        <h3>REMARKS</h3>
+        <p><%= @property.description %></p>
+      </div>
+
+      <!-- Property Details -->
+      <div class="property-feature">
+        <div>
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#primary-features" aria-controls="home" role="tab" data-toggle="tab">PRIMARY FEATURES</a></li>
+            <li role="presentation"><a href="#interior-features" aria-controls="settings" role="tab" data-toggle="tab">INTERIOR FEATURES</a></li>
+            <li role="presentation"><a href="#location-information" aria-controls="messages" role="tab" data-toggle="tab">LOCATION INFORMATION</a></li>
+            <li role="presentation"><a href="#financial-details" aria-controls="profile" role="tab" data-toggle="tab">FINANCIAL DETAILS</a></li>
+          </ul>
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <%= render 'primary_features' %>
+            <%= render 'interior_features' %>
+            <%= render 'location_information' %>
+            <%= render 'financial_details' %>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional -->
+      <div class="additional">
+        <%= render 'additional_info' %>
+      </div>
+    </div>
+  </div>
+</div> <!-- container -->

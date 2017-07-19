@@ -1,0 +1,35 @@
+<div role="tabpanel" class="tab-pane active" id="primary-features">
+  <div class="col-md-6 col-sm-6">
+    <div class="features">
+      <span><b>City: </b><%= @property.location.city %></span>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-sm-6">
+    <div class="features">
+      <span><b>Property Type: </b><%= @property.property_type.name %></span>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-sm-6">
+    <div class="features">
+      <span><b>Status: </b><%= @property.status %></span>
+    </div>
+  </div>
+
+  <% if @property.view.present? %>
+    <div class="col-md-6 col-sm-6">
+      <div class="features">
+        <span><b>View: </b><%= @property.view %></span>
+      </div>
+    </div>
+  <% end %>
+
+  <% if @property.built_year.present? %>
+    <div class="col-md-6 col-sm-6">
+      <div class="features">
+        <span><b>Year built: </b><%= @property.built_year %></span>
+      </div>
+    </div>
+  <% end %>
+</div>

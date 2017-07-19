@@ -9,7 +9,7 @@ class Property < ApplicationRecord
   has_many :pictures
 
   # validations  
-  validates :full_bedrooms, :full_baths, :price, :status, :Total_sq_feet_area, presence: true
+  validates :full_bedrooms, :full_baths, :price, :partial_bedrooms, :partial_baths, :status, :sq_feet_area, presence: true
   
   # results per page
   paginates_per 5

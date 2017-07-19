@@ -1,8 +1,8 @@
 <div class="search-property">
-  <div class="col-md-6 col-xs-12 col-sm-6">
+  <div class="col-md-6 col-xs-12 col-sm-6 search-img-border">
     <div class="search-property-img">
       <% if property.pictures.first.try(:picture).present? %>
-        <%= image_tag property.pictures.first.try(:picture), class: "img-responsive"  %>
+        <%= link_to image_tag(property.pictures.first.try(:picture)), property_path(property), class: "img-responsive"  %>
       <% end  %>
       <% if property.rent.present? %>
         <p class="property-status">Rent</p>
@@ -27,7 +27,7 @@
       <li><i class="fa fa-building"></i>6</li>
       <li><i class="fa fa-bed"></i><%= property.full_bedrooms.to_i + property.partial_bedrooms.to_i %></li>
       <li><i class="fa fa-street-view"></i><%= property.full_baths.to_i + property.partial_baths.to_i %></li>
-      <li><i class="fa fa-car"></i><%= property.additonal_feature.parking_count.to_i %></li>
+      <li><i class="fa fa-car"></i><%= property.additonal_feature.present? ? property.additonal_feature.parking_count.to_i : 0 %></li>
     </ul>
   </div>
 </div>

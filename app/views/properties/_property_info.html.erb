@@ -1,0 +1,59 @@
+<div class="property-info">
+  <h3>PROPERTY INFORMATION</h3>
+
+  <div class="col-md-4 col-sm-4 col-xs-12 pd-none">
+    <div class="info">
+      <span>Listing ID:</span>
+      <span><%= @property.id %></span>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-sm-4 col-xs-12 mob-pad">
+    <div class="info">
+      <span>Bedrooms:</span>
+      <span><%= @property.full_bedrooms + @property.partial_bedrooms %></span>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-sm-4 col-xs-12 pd-none">
+    <div class="info">
+      <span>Total Baths:</span>
+      <span><%= @property.full_baths + @property.partial_baths %></span>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-sm-4 col-xs-12 pd-none">
+    <div class="info">
+      <span>Full Baths:</span>
+      <span><%= @property.full_baths %></span>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-sm-4 col-xs-12 mob-pad">
+    <div class="info">
+      <span>Full Bedrooms:</span>
+      <span><%= @property.full_bedrooms %></span>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-sm-4 col-xs-12 pd-none">
+    <div class="info">
+      <span>Partial Baths:</span>
+      <span><%= @property.partial_baths %></span>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-sm-4 col-xs-12 pd-none">
+    <div class="info">
+      <span>Square Feet:</span>
+      <span><%= @property.sq_feet_area %></span>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-sm-4 col-xs-12 mob-pad">
+    <div class="info">
+      <span>City:</span>
+      <span><%= @property.location.city %></span>
+    </div>
+  </div>
+</div>

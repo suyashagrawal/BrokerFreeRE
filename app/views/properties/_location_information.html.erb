@@ -1,0 +1,27 @@
+<div role="tabpanel" class="tab-pane" id="location-information">
+  <div class="col-md-6 col-sm-6">
+    <div class="features">
+      <span><b>Street: </b><%= @property.location.address_line1 %></span>
+    </div>
+  </div>
+
+  <% if @property.location.present? && @property.location.address_line2.present? %>
+    <div class="col-md-6 col-sm-6">
+      <div class="features">
+        <span><b>Address: </b><%= @property.location.address_line2 %></span>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="col-md-6 col-sm-6">
+    <div class="features">
+      <span><b>City: </b><%= @property.location.city %></span>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-sm-6">
+    <div class="features">
+      <span><b>Country: </b><%= @property.location.country %></span>
+    </div>
+  </div>
+</div>

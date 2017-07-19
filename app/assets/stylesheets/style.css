@@ -1260,3 +1260,15 @@ search result Css Start here*/
 .usefull-link-padding {
   padding-left: 50px; 
 }
+
+.status-check-bg{
+  background: #8ca60f;
+  color: white;
+  border-radius: 50%;
+  height: 16px;
+  width: 16px;
+}
+
+.address {
+  padding: 3px;
+}
