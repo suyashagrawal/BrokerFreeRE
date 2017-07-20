@@ -550,10 +550,8 @@ footer .copyright img {
   .search_section .search-property-border .property-feature li i {
     margin: 0 8px;
   }
-  .search-property .search-img-border {
-    height: 220px;
-    border-right:  1px solid #ddd;
-    border-bottom: 0px;
+  .search_section .search-property-border {    
+    border-left:  none;    
   }
   .footer-social-icons ul {
     margin: 0px;
@@ -640,9 +638,9 @@ footer .copyright img {
   .login {
     width: 26%;
   }
-  .search-property .search-img-border {
+  /*.search-property .search-img-border {
     height: 308px;
-  }
+  }*/
 
   .logo > img {
     display: inline-block;
@@ -817,11 +815,11 @@ search result Css Start here*/
 .search-property-img {
   position: relative;  
 }
-.search-img-border {
+/*.search-img-border {
   border: 1px solid #ddd;
   border-right: 0px;
   height: 312px;
-}
+}*/
 .search-property-img .property-status {
   position: absolute;
   top: 20px;
@@ -891,11 +889,12 @@ search result Css Start here*/
 }
 
 .search-property-border {
-  border: 1px solid #ddd;
+  border-left: 1px solid #ddd;
   display: inline-block;  
 }
 .search-property {
   margin-bottom: 30px;
+  border: 1px solid #ddd;
 }
 .search-form-bgcolor {
   background-color: #f6f5f1;
@@ -925,8 +924,7 @@ search result Css Start here*/
   background-color: #92ab12;
 }
 
-.content {
-  height: 147px;
+.content {  
   overflow: hidden;  
   text-overflow: ellipsis;
   width: 100%;
@@ -1118,7 +1116,7 @@ search result Css Start here*/
   display: inline-block;
   padding-top: 10px;
   padding-bottom: 10px;
-  width: 99%;
+  width: 727px;
 }
 .features > span{
   font-weight: lighter;
@@ -1212,6 +1210,9 @@ search result Css Start here*/
   .property-details .nav-tabs > li{
     margin-top: 10px;
   }
+  .property-details .tab-content {
+    width: 100%;
+  }
 }
 .pagination {
   display: flex;
@@ -1271,4 +1272,15 @@ search result Css Start here*/
 
 .address {
   padding: 3px;
+}
+#ui-id-1 {
+  padding: 0px;
+}
+.ui-menu-item {
+  z-index: 999;
+  padding: 10px;
+  background-color: #fff;
+  width: 333px;
+  background: #e6e6e6;
+  cursor: pointer;
 }
