@@ -32,7 +32,7 @@
           <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
             <div class="item active">
-              <%= image_tag @property.pictures.first.try(:picture), class: "img-responsive" %>
+              <%= image_tag @property.pictures.first.try(:picture).url, class: "img-responsive" %>
             </div>
           </div>
         </div>

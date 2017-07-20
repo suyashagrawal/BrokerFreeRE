@@ -89,4 +89,32 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  CarrierWave.configure do |config|
+    config.storage    = :aws
+    config.aws_bucket = ENV['AWS_BUCKET']
+    config.aws_acl    = 'public-read'
+
+    # Optionally define an asset host for configurations that are fronted by a
+    # content host, such as CloudFront.
+    config.asset_host = ENV['ASSET_HOST']
+
+    # The maximum period for authenticated_urls is only 7 days.
+    config.aws_authenticated_url_expiration = 60 * 60 * 24 * 7
+
+    # Set custom options such as cache control to leverage browser caching
+
+    config.aws_credentials = {
+      access_key_id:     ENV['S3_KEY'],
+      secret_access_key: ENV['S3_SECRET'],
+      region:            'us-east-2' # Required
+    }
+
+  # Optional: Signing of download urls, e.g. for serving private content through
+  # CloudFront. Be sure you have the `cloudfront-signer` gem installed and
+  # configured:
+  # config.aws_signer = -> (unsigned_url, options) do
+  #   Aws::CF::Signer.sign_url(unsigned_url, options)
+  # end
+  end
 end

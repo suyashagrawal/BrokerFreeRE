@@ -51,7 +51,7 @@ class Property < ApplicationRecord
   end
 
   def self.by_location location_string
-    location_string.present? ? joins(:location).where("lower(concat_ws(' ' , locations.address_line1, locations.address_line2, locations.zipcode, locations.city, locations.country)) LIKE ?", "%#{location_string.downcase}%") : joins(:location).all
+    location_string.present? ? joins(:location).where("lower(concat_ws(', ', locations.address_line1, locations.address_line2, locations.zipcode, locations.city, locations.country)) LIKE ?", "%#{location_string.downcase}%") : joins(:location).all
   end
 
   def self.sorting sort_type

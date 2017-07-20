@@ -5,21 +5,21 @@ class PictureUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
   include CarrierWave::MiniMagick
 
-  process resize_to_fit: [1200, 800]
+  process resize_to_fit: [800, 800]
 
   version :thumb do
     process resize_to_fill: [200,200]
   end
 
-  # Choose what kind of storage to use for this uploader:
-  storage :file
-  # storage :fog
+  # # Choose what kind of storage to use for this uploader:
+  # storage :file
+  # # storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
-  def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-  end
+  # def store_dir
+  #   "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  # end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
@@ -52,5 +52,13 @@ class PictureUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+
+  storage :aws
+
+  # You can find a full list of custom headers in AWS SDK documentation on
+  # AWS::S3::S3Object
+  def download_url(filename)
+    url(response_content_disposition: %Q{attachment; filename="#{filename}"})
+  end
 
 end

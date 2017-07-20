@@ -6,14 +6,16 @@
       <% end  %>
       <% if property.rent.present? %>
         <p class="property-status">Rent</p>
-        <p class="property-price"><%= property.rent_per_month %>/<span>month</span></p>
+        <p class="property-price"><i class="fa fa-dollar"></i><%= property.rent_per_month %>/<span>month</span></p>
       <% end %>
     </div>
   </div>
 
   <div class="col-md-6 col-xs-12 col-sm-6 search-property-border">
     <div class="search-property-content">
-      <h3> 17 Apartment of Type A</h3>
+      <%= link_to property_path(property) do %>
+        <h3>17 Apartment of Type A</h3>
+      <% end %>
       <p class="address">
         <i class="fa fa-map-marker"></i>
         <%= property.location.full_address if property.location.present? %>

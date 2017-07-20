@@ -32,6 +32,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'rails_admin', '~> 1.2'
 
 gem 'carrierwave', '~> 1.0'
+gem 'carrierwave-aws'
+
 # bootstrapping gem
 gem 'therubyracer'
 gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
@@ -73,3 +75,5 @@ gem 'jquery-rails'
 group :production do
   gem 'rails_12factor'
 end
+
+gem 'jquery-ui-rails'

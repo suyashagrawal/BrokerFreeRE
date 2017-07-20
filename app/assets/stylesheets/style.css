@@ -30,7 +30,7 @@ header {
 .navigation ul li.active  a::before {
   position: absolute;background:#97b313;
   height: 5px;
-  width: 50px;
+  width: 70%;
   bottom: 0;
   content: "";
 }
