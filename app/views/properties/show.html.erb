@@ -39,13 +39,12 @@
       </div>
       <div class="property-images">
         <% @property.pictures.first(6).each do |picture| %>
-          <div class="col-md-2 col-sm-2">
-            <%= image_tag picture.picture.small.url, class: "other-images" %>
-          </div>
-        <% end %>
+            <div class="col-md-2 col-sm-2">
+              <%= image_tag picture.picture.small.url, class: "other-images"%>
+            </div>
+         <% end %>
       </div>
     </div>
-
     <!-- Enquiry Form -->
     <%= render 'enquiry_form' %>
 
