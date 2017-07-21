@@ -32,10 +32,17 @@
           <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
             <div class="item active">
-              <%= image_tag @property.pictures.first.try(:picture).url, class: "img-responsive" %>
+              <%= image_tag @property.pictures.first.try(:picture).url, class: "img-responsive", id: 'main-image' %>
             </div>
           </div>
         </div>
+      </div>
+      <div class="property-images">
+        <% @property.pictures.first(6).each do |picture| %>
+          <div class="col-md-2 col-sm-2">
+            <%= image_tag picture.small.url, class: "other-images" %>
+          </div>
+        <% end %>
       </div>
     </div>
 

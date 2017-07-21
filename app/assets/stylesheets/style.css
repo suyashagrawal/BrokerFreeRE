@@ -1284,3 +1284,19 @@ search result Css Start here*/
   background: #e6e6e6;
   cursor: pointer;
 }
+
+.property-images{
+  cursor: pointer;
+  margin-top: 15px;
+}
+.property-images img{
+  width: 100%;
+}
+.property-images .col-md-2{
+  margin-right: 14.9px;
+  padding: 0;
+  width: 15%;
+}
+.property-images .col-md-2:last-child{
+  margin-right: 0;
+}
