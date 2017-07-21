@@ -4,19 +4,19 @@ class Property < ApplicationRecord
   belongs_to :location
 
   has_one :interior_feature
-  has_one :additonal_feature
+  has_one :additional_feature
 
   has_many :pictures
 
   # validations  
-  validates :full_bedrooms, :full_baths, :price, :partial_bedrooms, :partial_baths, :status, :sq_feet_area, presence: true
+  validates :full_bedrooms, :full_baths, :price, :partial_bedrooms, :partial_baths, :status, :sq_feet_area, :location, :name, presence: true
   
   # results per page
   paginates_per 5
 
   # rails_admin
   rails_admin do
-   exclude_fields :interior_feature, :additonal_feature, :pictures
+   exclude_fields :interior_feature, :additional_feature, :pictures
   end
 
   scope :rent, -> { where(rent: true) }
@@ -51,7 +51,7 @@ class Property < ApplicationRecord
   end
 
   def self.by_location location_string
-    location_string.present? ? joins(:location).where("lower(concat_ws(', ', locations.address_line1, locations.address_line2, locations.zipcode, locations.city, locations.country)) LIKE ?", "%#{location_string.downcase}%") : joins(:location).all
+    location_string.present? ? joins(:location).where("lower(concat_ws(', ', locations.address_line1, locations.address_line2, locations.city, locations.state, locations.zipcode, locations.country)) LIKE ?", "%#{location_string.downcase}%") : joins(:location).all
   end
 
   def self.sorting sort_type

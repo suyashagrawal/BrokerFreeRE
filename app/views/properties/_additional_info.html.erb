@@ -1,46 +1,49 @@
 <h3>ADDITIONAL</h3>
 
-<div class="additional-info">
-  <% if @property.additonal_feature.construction_material.present? %>
-    <div class="col-md-6 col-sm-6 col-xs-12">
-      <p><span class="fa fa-check green-check "></span><b> Construction Material: </b><%= @property.additonal_feature.construction_material %></p>
-    </div>
+<% if @property.additional_feature.present? %>
+  <div class="additional-info">
+    <% if @property.additional_feature.construction_material.present? %>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <p><span class="fa fa-check green-check "></span><b> Construction Material: </b><%= @property.additional_feature.construction_material %></p>
+      </div>
+    <% end %>
+
+    <% if @property.interior_feature.heating.present? %>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <p><span class="fa fa-check green-check "></span><b> Heating: </b><%= @property.interior_feature.heating %></p>
+      </div>
+    <% end %>
+
+    <% if @property.interior_feature.cooling.present? %>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <p><span class="fa fa-check green-check "></span><b> Cooling: </b><%= @property.interior_feature.cooling %></p>
+      </div>
+    <% end %>
+
+    <% if @property.interior_feature.flooring.present? %>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <p><span class="fa fa-check green-check "></span><b> Flooring: </b><%= @property.interior_feature.flooring %></p>
+      </div>
+    <% end %>
+
+    <% if @property.additional_feature.face_direction.present? %>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <p><span class="fa fa-check green-check "></span><b> Face Direction: </b><%= @property.additional_feature.face_direction %></p>
+      </div>
+    <% end %>
+
+    <% if @property.additional_feature.parking_count.present? %>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <p><span class="fa fa-check green-check "></span><b> Parking Count: </b><%= @property.additional_feature.parking_count %></p>
+      </div>
+    <% end %>  
+
+    <% if @property.additional_feature.fencing.present? %>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <p><span class="fa fa-check green-check "></span><b> Fencing: </b><%= @property.additional_feature.fencing %></p>
+      </div>
+    <% end %>
+  <% else %> 
+    No Additional Features available
   <% end %>
-
-  <% if @property.interior_feature.heating.present? %>
-    <div class="col-md-6 col-sm-6 col-xs-12">
-      <p><span class="fa fa-check green-check "></span><b> Heating: </b><%= @property.interior_feature.heating %></p>
-    </div>
-  <% end %>
-
-  <% if @property.interior_feature.cooling.present? %>
-    <div class="col-md-6 col-sm-6 col-xs-12">
-      <p><span class="fa fa-check green-check "></span><b> Cooling: </b><%= @property.interior_feature.cooling %></p>
-    </div>
-  <% end %>
-
-  <% if @property.interior_feature.flooring.present? %>
-    <div class="col-md-6 col-sm-6 col-xs-12">
-      <p><span class="fa fa-check green-check "></span><b> Flooring: </b><%= @property.interior_feature.flooring %></p>
-    </div>
-  <% end %>
-
-  <% if @property.additonal_feature.face_direction.present? %>
-    <div class="col-md-6 col-sm-6 col-xs-12">
-      <p><span class="fa fa-check green-check "></span><b> Face Direction: </b><%= @property.additonal_feature.face_direction %></p>
-    </div>
-  <% end %>
-
-  <% if @property.additonal_feature.parking_count.present? %>
-    <div class="col-md-6 col-sm-6 col-xs-12">
-      <p><span class="fa fa-check green-check "></span><b> Parking Count: </b><%= @property.additonal_feature.parking_count %></p>
-    </div>
-  <% end %>  
-
-  <% if @property.additonal_feature.fencing.present? %>
-    <div class="col-md-6 col-sm-6 col-xs-12">
-      <p><span class="fa fa-check green-check "></span><b> Fencing: </b><%= @property.additonal_feature.fencing %></p>
-    </div>
-  <% end %>
-
 </div>

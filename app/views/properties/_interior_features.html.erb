@@ -1,57 +1,63 @@
 <div role="tabpanel" class="tab-pane" id="interior-features">
-  <% if @property.interior_feature.flooring.present? %>
-    <div class="col-md-6 col-sm-6">
-      <div class="features">
-        <span><b>Flooring: </b><%= @property.interior_feature.flooring %></span>
-      </div>
-    </div>
-  <% end %>
-  
-  <% if @property.interior_feature.cooling.present? %>
-    <div class="col-md-6 col-sm-6">
-      <div class="features">
-        <span><b>Cooling: </b><%= @property.interior_feature.cooling %></span>
-      </div>
-    </div>
-  <% end %>
-  
-  <% if @property.interior_feature.heating.present? %>
-    <div class="col-md-6 col-sm-6">
-      <div class="features">
-        <span><b>Heating: </b><%= @property.interior_feature.heating %></span>
-      </div>
-    </div>
-  <% end %>
+  <% if @property.interior_feature.present? %>
     
-  <% if @property.interior_feature.guest_facilities.present? %>
-    <div class="col-md-6 col-sm-6">
-      <div class="features">
-        <span><b>Guest_facilities: </b><%= @property.interior_feature.guest_facilities %></span>
+    <% if @property.interior_feature.flooring.present? %>
+      <div class="col-md-6 col-sm-6">
+        <div class="features">
+          <span><b>Flooring: </b><%= @property.interior_feature.flooring %></span>
+        </div>
       </div>
-    </div>
-  <% end %>
-  
-  <% if @property.interior_feature.basement? %>
-    <div class="col-md-6 col-sm-6">
-      <div class="features">
-        <span><b>Basement: </b>Yes</span>
+    <% end %>
+    
+    <% if @property.interior_feature.cooling.present? %>
+      <div class="col-md-6 col-sm-6">
+        <div class="features">
+          <span><b>Cooling: </b><%= @property.interior_feature.cooling %></span>
+        </div>
       </div>
-    </div>
-  <% end %>
-  
-  <% if @property.interior_feature.security.present? %>
-    <div class="col-md-6 col-sm-6">
-      <div class="features">
-        <span><b>Security: </b><%= @property.interior_feature.security %></span>
+    <% end %>
+    
+    <% if @property.interior_feature.heating.present? %>
+      <div class="col-md-6 col-sm-6">
+        <div class="features">
+          <span><b>Heating: </b><%= @property.interior_feature.heating %></span>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+      
+    <% if @property.interior_feature.guest_facilities.present? %>
+      <div class="col-md-6 col-sm-6">
+        <div class="features">
+          <span><b>Guest_facilities: </b><%= @property.interior_feature.guest_facilities %></span>
+        </div>
+      </div>
+    <% end %>
+    
+    <% if @property.interior_feature.basement? %>
+      <div class="col-md-6 col-sm-6">
+        <div class="features">
+          <span><b>Basement: </b>Yes</span>
+        </div>
+      </div>
+    <% end %>
+    
+    <% if @property.interior_feature.security.present? %>
+      <div class="col-md-6 col-sm-6">
+        <div class="features">
+          <span><b>Security: </b><%= @property.interior_feature.security %></span>
+        </div>
+      </div>
+    <% end %>
 
-  <% if @property.interior_feature.appliance.present? %>
-    <div class="col-md-6 col-sm-6">
-      <div class="features">
-        <span><b>Appliances: </b><%= @property.interior_feature.appliance %></span>
+    <% if @property.interior_feature.appliance.present? %>
+      <div class="col-md-6 col-sm-6">
+        <div class="features">
+          <span><b>Appliances: </b><%= @property.interior_feature.appliance %></span>
+        </div>
       </div>
-    </div>
+    <% end %>
+    
+  <% else %>
+    No Interior Features Available for this property.
   <% end %>
 </div>

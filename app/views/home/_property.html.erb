@@ -13,8 +13,9 @@
 
   <div class="col-md-6 col-xs-12 col-sm-6 search-property-border">
     <div class="search-property-content">
+
       <%= link_to property_path(property) do %>
-        <h3>17 Apartment of Type A</h3>
+        <%= property.name if property.name.present? %>
       <% end %>
       <p class="address">
         <i class="fa fa-map-marker"></i>
@@ -29,7 +30,7 @@
       <li><i class="fa fa-building"></i>6</li>
       <li><i class="fa fa-bed"></i><%= property.full_bedrooms.to_i + property.partial_bedrooms.to_i %></li>
       <li><i class="fa fa-street-view"></i><%= property.full_baths.to_i + property.partial_baths.to_i %></li>
-      <li><i class="fa fa-car"></i><%= property.additonal_feature.present? ? property.additonal_feature.parking_count.to_i : 0 %></li>
+      <li><i class="fa fa-car"></i><%= property.additional_feature.present? ? property.additional_feature.parking_count.to_i : 0 %></li>
     </ul>
   </div>
 </div>
