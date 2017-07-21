@@ -15,7 +15,7 @@
     <div class="search-property-content">
 
       <%= link_to property_path(property) do %>
-        <%= property.name if property.name.present? %>
+        <h3><%= property.name if property.name.present? %></h3>
       <% end %>
       <p class="address">
         <i class="fa fa-map-marker"></i>
