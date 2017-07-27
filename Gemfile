@@ -45,6 +45,7 @@ gem 'kaminari-bootstrap', '~> 3.0.1'
 
 gem "mini_magick"
 
+gem "breadcrumbs_on_rails"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

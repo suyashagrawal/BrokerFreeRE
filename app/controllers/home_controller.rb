@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   before_action :search
-  
+  add_breadcrumb "home", :root_path
+  add_breadcrumb "Search Result", :search_path
   def index
   end
 

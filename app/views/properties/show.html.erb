@@ -3,8 +3,12 @@
   <%= image_tag "header-bg.jpg" %>
 </div>
 
+
 <!-- Property details -->
 <div class="container">
+  <div class="breadcrumb-custom">
+    <%= render_breadcrumbs separator: ' > ' %>
+  </div>
   <div class="property-heading">
     <h2>Property Details</h2>
   </div>
@@ -21,7 +25,7 @@
           </p>
         </div>
         <div class="col-md-3 col-sm-3 pd-none text-right">
-          <h2>$<%= @property.price %></h2>
+          <h2><i class="fa fa-dollar"></i><%= @property.price %></h2>
           <div class="status">Status <span class="fa fa-check status-check-bg"></span></div>
         </div> 
       </div>

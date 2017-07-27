@@ -1300,3 +1300,11 @@ search result Css Start here*/
 .property-images .col-md-2:last-child{
   margin-right: 0;
 }
+.full-width .breadcrumb-custom{
+  margin-top: -19px;
+  margin-bottom: 20px;
+}
+.container .breadcrumb-custom{
+  margin-top: 17px;
+  margin-bottom: 20px;
+}
