@@ -1,6 +1,6 @@
+<%= render 'seller_header' %>
 
 <div class="container steps-page">
-  <%= render 'seller_header' %>
   <div class="property-details">
     <div class="col-md-8 col-sm-8 col-xs-12 pd-left mob-pad-right">
       <div class="steps-slider">
@@ -54,10 +54,10 @@
             <%= f.text_field :zipcode, placeholder: 'Zipcode', class: 'form-control' , required: true %>
           </div>
 
-          <div class="continue">
+          <div class="button-section">
             <%= f.submit "Continue", class: 'btn btn-primary continue-btn' %>
+            <%= link_to "Cancel", cancel_seller_steps_path,  class: 'btn btn-danger cancel-btn' %>
           </div>
-
         <% end %>
       </div>
 

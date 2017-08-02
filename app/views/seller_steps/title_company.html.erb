@@ -34,9 +34,10 @@
         <h3>Select Your Title Company</h3>
         <%= form_tag("#{wizard_path}", method: :patch, class: 'property-from')  do %>
           <%= select_tag :title_company, options_for_select(Property::Title_company), prompt:'Select Title Company', class: 'form-control' %>
-          
-          <div class="continue green-cont">
-            <%= submit_tag "Continue", class: 'continue-btn' %>
+
+          <div class="button-section green-cont">
+            <%= submit_tag "Continue", class: 'btn btn-primary continue-btn' %>
+            <%= link_to "Cancel", cancel_seller_steps_path,  class: 'btn btn-danger cancel-btn' %>
           </div>
         <% end %>
       </div>

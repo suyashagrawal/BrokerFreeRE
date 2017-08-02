@@ -17,6 +17,8 @@ class SellerStepsController < ApplicationController
       @property = Property.where(id: session[:property_id]).first
     when 'title_company'
       @property = Property.where(id: session[:property_id]).first
+    when 'thank_you'
+      reset_session
     end
     render_wizard
   end
@@ -40,6 +42,11 @@ class SellerStepsController < ApplicationController
     end
   end
 
+  def cancel
+    reset_session
+    redirect_to root_path
+  end
+
   private
 
   def location_params
@@ -55,22 +62,37 @@ class SellerStepsController < ApplicationController
   end
 
   def create_property_location
-    @location = Location.new(location_params)
-    session[:location_id] = @location.id if @location.save
+    if session[:location_id].present?
+      @location = Location.where(id: session[:location_id]).first
+      @location.update(location_params)
+    else
+      @location = Location.new(location_params)
+      session[:location_id] = @location.id if @location.save
+    end
     render_wizard @location
   end
 
   def create_seller_with_address
-    @seller = Seller.new(seller_params)
-    @seller.save_with_address(location_params)
-    session[:seller_id] = @seller.id if @seller.save
+    if session[:seller_id].present?
+      @seller = Seller.where(id: session[:seller_id]).first
+      @seller.update(seller_params)
+    else
+      @seller = Seller.new(seller_params)
+      @seller.save_with_address(location_params)
+      session[:seller_id] = @seller.id if @seller.save
+    end
     render_wizard @seller
   end
 
   def create_property
-    @property = Property.new(property_params)
-    @property.location = Location.where(id: session[:location_id]).first
-    session[:property_id] = @property.id if @property.save
+    if session[:property_id].present?
+      @property = Property.where(id: session[:property_id]).first
+      @property.update(property_params)  
+    else
+      @property = Property.new(property_params)
+      @property.location = Location.where(id: session[:location_id]).first
+      session[:property_id] = @property.id if @property.save
+    end
     render_wizard @property
   end
 

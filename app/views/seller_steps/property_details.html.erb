@@ -93,8 +93,9 @@
             <%= f.text_area :description, placeholder: "Property description", class: 'form-control' %>
           </div>
 
-          <div class="continue">
-            <%= submit_tag "Continue", class: 'continue-btn' %>
+          <div class="button-section">
+            <%= submit_tag "Continue", class: 'btn btn-primary continue-btn' %>
+            <%= link_to "Cancel", cancel_seller_steps_path,  class: 'btn btn-danger cancel-btn' %>
           </div>
         <% end %>
       </div>

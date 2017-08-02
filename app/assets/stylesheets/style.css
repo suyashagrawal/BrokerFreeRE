@@ -1853,3 +1853,10 @@ search result Css Start here*/
 .row.row-margin{
   margin: none
 }
+.cancel-btn{
+  height: 40px;
+  border-radius: 0px;
+}
+.button-section{
+  margin-top: 10px;
+}

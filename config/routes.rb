@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   get '/sale', to: 'home#sale', as: 'sale'
 
   resources :properties, only: :show
-  resources :seller_steps
+  resources :seller_steps do
+  	collection do
+  		get :cancel
+  	end
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

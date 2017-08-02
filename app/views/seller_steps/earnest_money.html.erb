@@ -38,8 +38,9 @@
                 <div class="input-group-addon">Dollar ($)</div>
               </div>
             </div>
-            <div class="continue green-cont">
-              <%= submit_tag "Continue", class: "continue-btn"%>
+            <div class="green-cont">
+              <%= submit_tag "Continue", class: 'btn btn-primary continue-btn' %>
+              <%= link_to "Cancel", cancel_seller_steps_path,  class: 'btn btn-danger cancel-btn' %>
             </div>
           <% end %>
         </div>
