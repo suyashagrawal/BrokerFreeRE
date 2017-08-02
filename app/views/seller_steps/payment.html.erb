@@ -1,7 +1,4 @@
-<!-- Header-bg -->
-<div class="header-bg steps-header">
-  <p>Sell Your Home</p>
-</div>
+<%= render 'seller_header' %>
 
 <!-- Property details -->
 <div class="container steps-page">
@@ -10,7 +7,28 @@
   </div>
   <div class="property-details">
     <div class="steps-slider">
-      <img src="../assets/step1-img.png">
+      <ul>
+        <li class="active">
+          <%= link_to "1", wizard_path(:address) %>
+        </li>
+        <li class="active">
+          <%= link_to "2", wizard_path(:personal_details) %>
+        </li>
+        <li class="active">
+          <%= link_to "3", wizard_path(:property_details) %>
+        </li>
+        <li class="active">
+          <%= link_to "4", wizard_path(:price) %>
+        </li>
+        <li class="active">
+          <%= link_to "5", wizard_path(:earnest_price) %>
+        </li>
+        <li class="active">
+          <%= link_to "6", previous_wizard_path %>
+        </li>
+        <li class="active"><a href="javascript:void(0)">7</a></li>
+        <li><a href="javascript:void(0)">8</a></li>
+      </ul>
     </div>
     <div class="create-profile">
       <h3>Payment Options</h3>

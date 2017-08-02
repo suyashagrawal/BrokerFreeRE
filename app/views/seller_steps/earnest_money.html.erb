@@ -1,8 +1,4 @@
-
-<!-- Header-bg -->
-<div class="header-bg steps-header">
-  <p>Sell Your Home</p>
-</div>
+<%= render 'seller_header' %>
 
 <!-- Property details -->
 <div class="container steps-page">
@@ -13,14 +9,22 @@
     <div class="col-md-8 col-sm-8 col-xs-12 pd-left mob-pad-right">
       <div class="steps-slider">
         <ul>
-          <li class="active"><a href="">1</a></li>
-          <li class="active"><a href="">2</a></li>
-          <li class="active"><a href="">3</a></li>
-          <li class="active"><a href="">4</a></li>
-          <li class="active"><a href="">5</a></li>
-          <li><a href="">6</a></li>
-          <li><a href="">7</a></li>
-          <li><a href="">8</a></li>
+          <li class="active">
+            <%= link_to "1", wizard_path(:address) %>
+          </li>
+          <li class="active">
+            <%= link_to "2", wizard_path(:personal_details) %>
+          </li>
+          <li class="active">
+            <%= link_to "3", wizard_path(:property_details) %>
+          </li>
+          <li class="active">
+            <%= link_to "4", previous_wizard_path %>
+          </li>
+          <li class="active"><a href="javascript:void(0)">5</a></li>
+          <li><a href="javascript:void(0)">6</a></li>
+          <li><a href="javascript:void(0)">7</a></li>
+          <li><a href="javascript:void(0)">8</a></li>
         </ul>
       </div>
       <div class="create-profile">
