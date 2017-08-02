@@ -45,6 +45,9 @@ gem 'kaminari-bootstrap', '~> 3.0.1'
 
 gem "mini_magick"
 
+gem 'countries'
+
+gem 'wicked'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -77,3 +80,4 @@ group :production do
 end
 
 gem 'jquery-ui-rails'
+gem 'jquery-validation-rails'

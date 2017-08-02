@@ -1,0 +1,139 @@
+<!-- Header-bg -->
+<div class="header-bg steps-header">
+  <p>Sell Your Home</p>
+</div>
+
+<!-- Property details -->
+<div class="container steps-page">
+  <div class="sell-heading">
+    <h2>Sell Your Home</h2>
+  </div>
+
+  <div class="property-details">
+    <div class="col-md-8 col-sm-8 col-xs-12 pd-left mob-pad-right">
+      <div class="steps-slider">
+        <ul>
+          <li class="active">
+            <%= link_to "1", wizard_path(:address) %>
+          </li>
+          <li class="active">
+            <%= link_to "2", wizard_path(:personal_details) %>
+          </li>
+          <li class="active"><a href="">3</a></li>
+          <li><a href="">4</a></li>
+          <li><a href="">5</a></li>
+          <li><a href="">6</a></li>
+          <li><a href="">7</a></li>
+          <li><a href="">8</a></li>
+        </ul>
+      </div>
+
+      <div class="create-profile">
+        <h3>Create Your Profile</h3>
+        <h4>Tell Us About Your Home</h4>
+        <%= form_for :property, url: wizard_path, method: :patch, html: { class: 'property-form' } do |f| %>
+          <div class="form-group custom-file">
+            <input type="file" name="img[]" class="file">
+            <div class="input-group col-xs-12">
+              <input type="text" class="form-control input-lg file-input" disabled placeholder="Upload Your Photo">
+              <span class="input-group-btn">
+                <button class="browse" type="button">
+                  <%= image_tag("file-icon.png") %>
+                </button>
+              </span>
+            </div>
+          </div>
+
+          <div class="row row-margin">
+            <div class="form-group col-md-6 col-sm-6 pd-left mob-pad-right">
+              <div class="col-md-9 col-sm-9 col-xs-9 pd-left">
+                <%= f.text_field :sq_feet_area, placeholder: "Enter total sq feet.", class: 'form-control' %>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-3 pd-none feet">
+                FEET
+              </div>
+            </div>
+
+            <div class="form-group col-md-6 col-sm-6 pd-right mob-pad-left">
+              <div class="col-md-9 col-sm-9 col-xs-9 pd-left">
+                <%= f.text_field :finished_sq_feet, placeholder: "Finished sq feet.", class: 'form-control' %>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-3 pd-none feet">
+                FEET
+              </div>
+            </div>
+          </div>  
+
+          <div class="row row-margin">
+            <div class="form-group col-md-6 col-sm-6 pd-left mob-pad-right">
+              <%= f.text_field :built_year, placeholder: "Enter year of Home built", class: 'form-control' %>
+            </div>
+
+            <div class="form-group col-md-6 col-sm-6 pd-right mob-pad-left">
+              <%= f.text_field :full_bedrooms, placeholder: "Enter no. of full bedrooms", class: 'form-control', required: true %>
+            </div>
+          </div>  
+
+          <div class="row row-margin">
+            <div class="form-group col-md-6 col-sm-6 pd-left mob-pad-right">
+              <%= f.text_field :full_baths, placeholder: "Enter no. of full bathrooms", class: 'form-control', required: true %>
+            </div>
+
+            <div class="form-group col-md-6 col-sm-6 pd-right mob-pad-left">
+              <%= f.text_field :partial_bedrooms, placeholder: "Enter no. of partial bedrooms", class: 'form-control' %>
+            </div>
+          </div>  
+
+          <div class="form-group col-md-6 col-sm-6 pd-left mob-pad-right">
+            <%= f.text_field :partial_baths, placeholder: "Enter no. of partial bathrooms", class: 'form-control' %>
+          </div>
+
+          <div class="form-group col-md-6 col-sm-6 pd-right mob-pad-left">
+            <%= select_tag :property_type_id, options_for_select(PropertyType.all.collect {|u| [ u.name, u.id ] }), prompt: 'Select type', class: 'form-control', name: 'property[property_type_id]' %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.text_area :description, placeholder: "Property description", class: 'form-control' %>
+          </div>
+
+          <div class="continue">
+            <%= submit_tag "Continue", class: 'continue-btn' %>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+
+    <!-- Enquiry Form -->
+    <%= render 'home/search_form' %>
+  </div>
+</div> <!-- container -->
+
+<script type="text/javascript">
+  $(".property-form").validate({
+    rules: {
+      "property[sq_feet_area]": {
+        required: true,
+        number: true
+      },
+      "property[full_bedrooms]": {
+        required: true,
+        digits: true
+      },
+      "property[full_baths]": {
+        required: true,
+        digits: true
+      }
+    }
+  });
+</script>
+<script type="text/javascript">
+  $(document).on('click', '.browse', function(){
+    var file = $(this).parent().parent().parent().find('.file');
+    file.trigger('click');
+  });
+  $(document).on('change', '.file', function(){
+    $(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, ''));
+  });
+</script>
+  

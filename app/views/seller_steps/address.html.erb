@@ -1,0 +1,88 @@
+<div class="header-bg steps-header">
+  <p>Sell Your Home</p>
+</div>
+
+<div class="container steps-page">
+  <div class="sell-heading">
+    <h2>Sell Your Home</h2>
+  </div>
+
+  <div class="property-details">
+    <div class="col-md-8 col-sm-8 col-xs-12 pd-left mob-pad-right">
+      <div class="steps-slider">
+
+        <ul>
+          <li class="active"><a href="">1</a></li>
+          <li><a href="">2</a></li>
+          <li><a href="">3</a></li>
+          <li><a href="">4</a></li>
+          <li><a href="">5</a></li>
+          <li><a href="">6</a></li>
+          <li><a href="">7</a></li>
+          <li><a href="">8</a></li>
+        </ul>
+      </div>
+
+      <div class="create-profile">
+        <h3>Create Your Profile</h3>
+        <h4>What's the listing Address</h4>
+
+        <%= form_for :location, url: wizard_path, method: :patch, html: { class: 'address-form' } do |f| %>
+
+          <div class="form-group">
+            <%= f.text_field :address_line1, placeholder: "Address line no.1", class: 'form-control', required: true %>
+            <% if @location.errors[:address_line1].present? %>
+              <label id="location_address_line1-error" class="error" for="location_address_line1">This field is required.</label>
+            <% end %> 
+          </div>
+
+          <div class="form-group">
+            <%= f.text_field :address_line2, placeholder: "Address line no.2", class: 'form-control' %>
+          </div>
+
+          <div class="form-group col-md-6 col-sm-6 pd-left mob-pad-right">
+            <div class="select-style">
+              <%= f.select(:country, options_for_select(countries), {}, { :class => 'country' }) %>
+            </div>
+          </div>
+
+          <div class="form-group col-md-6 col-sm-6 pd-right mob-pad-left">
+            <div class="select-style">
+              <%= f.select :state, options_for_select(""), prompt:'State', class: 'form-control', id: "location_state", required: true %>
+            </div>
+          </div>
+
+          <div class="form-group col-md-6 col-sm-6 pd-left mob-pad-right">
+            <%= f.text_field :city, placeholder: 'City', class: 'form-control', required: true %>
+          </div>
+
+          <div class="form-group col-md-6 col-sm-6 pd-right mob-pad-left">
+            <%= f.text_field :zipcode, placeholder: 'Zipcode', class: 'form-control' , required: true %>
+          </div>
+
+          <div class="continue">
+            <%= f.submit "Continue", class: 'btn btn-primary continue-btn' %>
+          </div>
+
+        <% end %>
+      </div>
+
+    </div>
+    <!-- Enquiry Form -->
+    <%= render 'home/search_form' %>            
+    <!-- Property Information -->
+  </div>
+
+</div> <!-- container -->
+
+<script type="text/javascript">
+  $( ".address-form" ).validate({
+    rules: {
+      "location[zipcode]": {
+        required: true,
+        digits: true
+      }
+    }
+  });
+
+</script>

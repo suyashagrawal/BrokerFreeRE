@@ -1,0 +1,53 @@
+<!-- Header-bg -->
+<div class="header-bg steps-header">
+  <p>Sell Your Home</p>
+</div>
+
+<!-- Property details -->
+<div class="container steps-page">
+  <div class="sell-heading">
+    <h2>Sell Your Home</h2>
+  </div>
+  <div class="property-details">
+    <div class="col-md-8 col-sm-8 col-xs-12 pd-left mob-pad-right">
+      <div class="steps-slider">
+        <ul>
+          <li class="active">
+            <%= link_to "1", wizard_path(:address) %>
+          </li>
+          <li class="active">
+            <%= link_to "2", wizard_path(:personal_details) %>
+          </li>
+          <li class="active">
+            <%= link_to "3", wizard_path(:property_details) %>
+          </li>
+          <li class="active"><a href="">4</a></li>
+          <li><a href="">5</a></li>
+          <li><a href="">6</a></li>
+          <li><a href="">7</a></li>
+          <li><a href="">8</a></li>
+        </ul>
+      </div>
+      <div class="create-profile">
+        <h3>Enter Your Home Price</h3>
+        <div class="form-inline home-price">
+          <%= form_for :property, url: wizard_path, method: :patch, html: { class: 'property-form' } do |f| %>
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 pd-none">
+              <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+              <div class="input-group">
+                <%= f.text_field :price, placeholder: "Enter Amount", class: 'form-control' %>
+                <div class="input-group-addon">Dollar ($)</div>
+              </div>
+            </div>
+            <div class="continue green-cont">
+              <%= submit_tag "Continue", class: "continue-btn" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <!-- Enquiry Form -->
+    <%= render 'home/search_form' %>
+  </div>
+</div> <!-- container -->

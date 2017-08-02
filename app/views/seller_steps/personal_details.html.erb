@@ -1,0 +1,110 @@
+<!-- Header-bg -->
+<div class="header-bg steps-header">
+  <p>Sell Your Home</p>
+</div>
+
+<!-- Property details -->
+<div class="container steps-page">
+  <div class="sell-heading">
+    <h2>Sell Your Home</h2>
+  </div>
+
+  <div class="property-details">
+    <div class="col-md-8 col-sm-8 col-xs-12 pd-left mob-pad-right">
+      <div class="steps-slider">
+        <ul>
+          <li class="active">
+            <%= link_to "1", previous_wizard_path %>
+          </li>
+          <li class="active"><a href="">2</a></li>
+          <li><a href="">3</a></li>
+          <li><a href="">4</a></li>
+          <li><a href="">5</a></li>
+          <li><a href="">6</a></li>
+          <li><a href="">7</a></li>
+          <li><a href="">8</a></li>
+        </ul>
+      </div>
+
+      <div class="create-profile">
+        <h3>Create Your Profile</h3>
+        <h4>Personal Detail</h4>
+        <%= form_tag("#{wizard_path}", method: :patch, class: 'presonal-form') do %>
+          <div class="row row-margin">
+            <div class="form-group col-md-6 col-sm-6 pd-left mob-pad-right">
+              <%= text_field_tag :first_name, nil, placeholder: "Legal First Name", class: 'form-control', name: 'seller[first_name]', required: true, value: @seller.first_name %>
+            </div>
+
+            <div class="form-group col-md-6 col-sm-6 pd-right mob-pad-left">
+              <%= text_field_tag :last_name, nil, placeholder: "Legal Last Name", class: 'form-control', name: 'seller[last_name]', required: true, value: @seller.last_name %>
+            </div>
+          </div>
+
+          <div class="row row-margin">
+            <div class="form-group col-md-6 col-sm-6 pd-left mob-pad-right">
+              <%= text_field_tag :email, nil, placeholder: "Email", class: 'form-control', name: 'seller[email]', required: true, value: @seller.email %>
+            </div>
+
+            <div class="form-group col-md-6 col-sm-6 pd-right mob-pad-left">
+              <%= text_field_tag :address_line1, nil, placeholder: "Current Address", class: 'form-control', name: 'location[address_line1]', required: true, value: @location.address_line1 %>
+            </div>
+          </div>  
+
+          <div class="row row-margin">
+            <div class="form-group col-md-6 col-sm-6 pd-left mob-pad-right">
+              <div class="select-style">
+                <%= select_tag :country, options_for_select(countries), prompt:'Select Country', class: 'form-control country', name: 'location[country]', required: true, value: @location.country %>
+              </div>
+            </div>
+
+            <div class="form-group col-md-6 col-sm-6 pd-right mob-pad-left">
+              <div class="select-style">
+                <%= select_tag :state, options_for_select(""), prompt:'State', class: 'form-control', id: "location_state", name: 'location[state]', required: true, value: @location.state %>
+              </div>
+            </div>
+          </div>  
+
+          <div class="row row-margin">
+            <div class="form-group col-md-6 col-sm-6 pd-left mob-pad-right">
+              <%= text_field_tag :city, nil, placeholder: "City", class: 'form-control', name: 'location[city]', required: true, value: @location.city %>
+            </div>
+
+            <div class="form-group col-md-6 col-sm-6 pd-right mob-pad-left">
+              <%= text_field_tag :zipcode, nil, placeholder: "Zipcode", class: 'form-control', name: 'location[zipcode]', required: true, value: @location.zipcode %>
+            </div>
+          </div>  
+
+          <div class="form-group col-md-6 col-sm-6 pd-left mob-pad-right">
+            <%= text_field_tag :contact, nil, placeholder: "Primary phone number", class: 'form-control', name: 'seller[contact]', value: @seller.contact %>
+          </div>
+
+          <div class="checkbox">
+            <%= check_box_tag :terms_and_conditions, {}, {}, class: 'margin-left-zero' %>
+            <%= label_tag :terms_and_conditions, "I agree with the BrokerFreeRe Terms of Service" %><a href="" class="agree"> AGREE </a>
+          </div>
+
+          <div class="continue">
+            <%= submit_tag "Continue", class: 'continue-btn' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- Enquiry Form -->
+      <%= render 'home/search_form' %>
+  </div>
+</div> <!-- container -->
+
+<script type="text/javascript">
+  $(".presonal-form").validate({
+    rules: {
+      "seller[email]": {
+        email: true,
+      },
+      "seller[contact]": {
+        required: true,
+        digits: true
+      }
+    }
+  });
+</script>

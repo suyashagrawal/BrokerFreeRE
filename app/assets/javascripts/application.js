@@ -15,6 +15,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.bxslider
+//= require jquery.validate
 //= require property_images
+//= require country_state
 //= require twitter/bootstrap
 //= require_tree .

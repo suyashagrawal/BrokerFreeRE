@@ -116,7 +116,7 @@ header {
 .form-group button, .form-group input {
   background-color: #e6e6e6;
   border-radius: 0px;
-}
+}  
 .form-group input {
   border: 0px;
 }
@@ -1299,4 +1299,557 @@ search result Css Start here*/
 }
 .property-images .col-md-2:last-child{
   margin-right: 0;
+}
+.steps-slider ul li {
+  list-style-type: none;
+  display: inline;
+  margin-right: 76px;
+  position: relative;
+}
+.steps-slider ul {
+  padding: 0;
+  margin-top: 20px;
+}
+.steps-slider ul li a {
+  background: #0276af;
+  border-radius: 50%;
+  color: #fff;
+  display: inline-block;
+  height: 23px;
+  text-align: center;
+  width: 23px;
+  padding-top: 1px;
+}
+.steps-slider ul li a {
+  text-decoration: none;
+}
+.steps-slider ul li::after {
+  border: 2px solid #0275ae;
+  content: "";
+  position: absolute;
+  top: 7px;
+  width: 80px;
+  border-left: 0;
+  border-right: 0;
+}
+.steps-slider ul li:last-child::after {
+  border: 0;
+}
+.steps-slider ul li.active a {
+  border: 1px solid #479cc5;
+  background: #fff;
+  color: #479cc5;
+}
+.steps-slider ul li.active::after {
+  border: 1px double #479cc5;
+  content: "";
+  height: 5px;
+  border-left: 0;
+  border-right: 0;
+}
+.steps-slider ul li:last-child.active::after {
+  border: 0;
+}
+/* Step1 Css */
+
+.header-bg.steps-header{
+  background: url("../assets/header-bg.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-bg.steps-header{
+  color: #fff;
+  font-size: 36px;
+}
+.sell-heading h2{
+  color: #474747;
+  font-size: 32px;
+}
+.steps-slider img{
+  width: 100%;
+}
+.create-profile h3{
+  color: #999;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+.create-profile h4{
+  color: #343434;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.create-profile input{
+  border-radius: 0;
+  border-color: #999;
+  height: 40px;
+}
+.create-profile input[type="text"]{
+  border: 1px #999 solid;
+}
+.create-profile input:focus{
+  box-shadow: none;
+}
+.continue{
+  display: inline-block;
+  width: 100%;
+  margin-top: 25px;
+}
+.create-profile textarea{
+  border-radius: 0;
+  border-color: #999;
+}
+.continue a{
+  background: #0276af;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  padding: 12px 50px;
+}
+.continue a:hover{
+  text-decoration: none;
+  color: #fff;
+}
+.search-btn{
+  background: url("../assets/bg-button.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  text-align: center;
+  border-radius: 4px;
+  padding: 15px 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  display: inline-block;
+  width: 100%;
+}
+.search-btn a{
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.search-btn a:hover{
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Custom Select */
+
+.create-profile .select-style{
+  border: 1px solid #999;
+  border-radius: 0px;
+  overflow: hidden;
+  background: #fff url("../assets/icon-select.png") no-repeat 98% 50%;
+  width: 100%;
+  height: 40px;
+}
+
+.create-profile .select-style select{
+  padding: 5px 8px;
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  background-image: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  height: 40px;
+}
+
+.create-profile .select-style select:focus {
+  outline: none;
+}
+.enquiry-form .select-style {
+  border: 1px solid #c6c6c6;
+  border-radius: 0px;
+  overflow: hidden;
+  background: #fff url("../assets/icon-select.png") no-repeat 98% 50%;
+  width: 100%;
+  height: 40px;
+}
+
+.enquiry-form .select-style select{
+  padding: 5px 8px;
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  background-image: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  height: 40px;
+  color: #081012;
+  opacity: 0.7;
+}
+
+.enquiry-form .select-style select:focus {
+  outline: none;
+}
+.create-profile .form-control::-moz-placeholder, .enquiry-form .form-control::-moz-placeholder {
+  color: #081012;
+  opacity: 0.7;
+}
+
+
+
+/* Steps2 Css */
+
+.steps-page .checkbox{
+  width: 100%;
+  display: inline-block;;
+}
+.steps-page .checkbox input{
+  height: auto;
+}
+.steps-page .checkbox a{
+  color: #92b014;
+  text-decoration: underline;
+}
+
+/* Step 3 Css */
+
+.feet {
+  align-items: center;
+  background: #999;
+  color: hsl(0, 0%, 100%);
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  text-align: center;
+}
+.feet a{
+  color: #fff;
+  font-style: italic;
+  font-size: 16px;
+}
+.feet a:hover{
+  color: #fff;
+  text-decoration: none;
+}
+.file {
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+}
+.custom-file button{
+  border: 0;
+  height: 38px;
+  background: #fff;
+}
+.custom-file .file-input{
+  border-right: 0;
+  font-size: 15px;
+  opacity: 0.7;
+  color: #081012;
+}
+.custom-file input.file-input{
+  background: #fff;
+}
+.custom-file span{
+  border: 1px solid #919191;
+  border-left: 0;
+}
+
+/* Step4 Cs */
+
+.home-price .input-group{
+  width: 100%;
+}
+.home-price .input-group-addon{
+  width: 18% !important;
+  padding: 0;
+  color: #fff;
+  font-size: 16px;
+  background: #999;
+  border: 1px solid #919191;
+}
+.report-btn{
+  background: #70850c;
+  text-align: center;
+  margin-top: 15px;
+  padding: 13px 0 !important;
+  margin-bottom: 15px;
+}
+.report-btn a{
+  color: #fff;
+  font-size: 17px;
+}
+.report-btn a:hover{
+  text-decoration: none;
+  color: #fff;
+}
+.create-profile .estimate{
+  width: 100%;
+  height: 34px;
+  background: #c5c5c5;
+}
+.create-profile .estimate input{
+  border: 0;
+  height: 34px;
+  background: #c5c5c5;
+}
+.create-profile .estimate p{
+  font-size: 20px;
+  color: #fff;
+}
+.continue.green-cont a{
+  background: #70850c;
+}
+
+/* Step6 Css */
+
+.comp-title .checkbox label{
+  color: #081012;
+  opacity: 0.7;
+}
+
+/* Step7 Css */
+
+.payment-package {
+  background: #0276af;
+  color: #fff;
+  font-size: 25px;
+  padding: 8px 0;
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.month-payment {
+  background: #0276af;
+  border-radius: 50%;
+  height: 250px;
+  text-align: center;
+  width: 250px;
+  margin: 0 auto;
+  padding: 70px 0;
+}
+.month-payment p {
+  color: #fff;
+  font-size: 22px;
+}
+.billing-address{
+  background: #f6f5f1;
+  padding: 15px 10px;
+  margin-top: 30px;
+  width: 100%;
+  display: inline-block;
+  padding-bottom: 0;
+}
+.billing-address h3{
+  margin-top: 0;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+.billing-address input {
+  height: 40px;
+}
+.label-div {
+  margin-bottom: 5px;
+}
+.billing-address .input-group-addon{
+  background: #999;
+  font-size: 20px;
+  color: #fff;
+}
+.payment-opt .checkbox {
+  font-size: 30px;
+  font-style: italic;
+}
+.payment-opt .checkbox input {
+  height: 35px;
+}
+.payment-img img {
+  width: 100%;
+}
+.terms-bg {
+  background: #f6f5f1;
+  display: inline-block;
+  width: 100%;
+}
+.blank-div {
+  height: 70px;
+  background: #0276af;
+  margin-top: 30px;
+}
+.terms {
+  padding: 20px;
+}
+.terms h3 {
+  margin-top: 0;
+  font-size: 26px;
+}
+.terms p {
+  width: 80%;
+}
+.terms-text {
+  color: #182313;
+  font-size: 18px;
+  opacity: 0.8;
+  width: 100%;
+  height: 250px;
+  overflow-y: scroll;
+}
+.agree a {
+  background: #838ea4;
+  color: #000;
+  float: right;
+  margin-right: 60px;
+  padding: 8px 40px;
+}
+.agree a:hover {
+  text-decoration: none;
+  color: #838ea4;
+}
+.payment-package.payment-blank{
+  padding: 20px;
+}
+.buy {
+  text-align: center;
+}
+.buy a {
+  background: #0276af;
+  border: 1px solid #000;
+  border-radius: 6px;
+  color: hsl(0, 0%, 100%);
+  font-size: 40px;
+  padding: 15px 110px;
+}
+.buy a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Step8 Css */
+
+.thank-img img {
+  width: 100%;
+}
+.thank-txt  p {
+  color: hsl(200, 97%, 35%);
+  font-size: 35px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  text-align: center;
+}
+.seller-btn {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.seller-btn a {
+  background: hsl(200, 97%, 35%) none repeat scroll 0 0;
+  color: hsl(0, 0%, 100%);
+  font-size: 30px;
+  padding: 20px 28px;
+}
+.seller-btn a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+/* Step1 media */
+
+@media(max-width: 767px){
+  .steps-page .mob-pad{
+    padding: 15px;
+  }
+  .steps-page .mob-pad-left{
+    padding-left: 0px;
+  }
+  .steps-page .mob-pad-right{
+    padding-right: 0px;
+  }
+  .enquiry-form{
+    width: 100%;
+  }
+  .header-bg.steps-header{
+    height: auto;
+    background-size: cover;
+  }
+  .buy a{
+    font-size: 18px;
+    padding: 15px 60px;
+  }
+  .terms p{
+    width: 100%;
+  }
+  .month-payment{
+    margin-bottom: 15px;
+  }
+  .create-profile .estimate {
+    display: inline-block;
+    height: auto;
+  }
+  .create-profile .estimate p {
+    font-size: 15px;
+  }
+  .thank-txt p {
+    font-size: 20px;
+  }
+  .seller-btn a {
+    font-size: 18px;
+  }
+  .steps-slider ul li {
+    margin-right: 10px;
+  }
+  .steps-slider ul li::after {
+    width: 14px;
+  }
+}
+
+@media(min-width: 768px) and (max-width: 1200px){
+  .steps-page .tab-pad-right{
+    padding-right: 0px;
+  }
+  .search-btn a{
+    font-size: 12px;
+  }
+  .header-bg.steps-header{
+    height: 250px;
+  }
+  .month-payment{
+    height: 200px;
+    width: 200px;
+    padding: 50px 0;
+  }
+  .month-payment p {
+    font-size: 20px;
+  }
+  .create-profile .estimate p {
+    font-size: 12px;
+    position: relative;
+    top: 8px;
+  }
+  .steps-slider ul li {
+    margin-right: 35px;
+  }
+  .steps-slider ul li::after {
+    width: 39px;
+  }
+}
+.form-group .error{
+  color: black;
+  display: inline-block;
+}
+.continue-btn {
+  background: #0276af !important;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  padding: 9px 50px;
+}
+.create-profile form.address-form label.error, form.presonal-form label.error, form.property-form label.error{
+  color: red;
+  text-transform: none;
+}
+.create-profile form.address-form input, form.presonal-form input, form.property-form input{
+  background: none;
+}
+.margin-left-zero{
+  margin-left: 0px !important;
+}
+.row.row-margin{
+  margin: none
 }

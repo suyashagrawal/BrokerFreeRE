@@ -56,7 +56,8 @@
                 <% end %>
               </li>
               <li><%= link_to "Buyer" %></li>
-              <li><%= link_to "Seller" %></li>
+              <li class="<%= 'active' if params[:controller] == 'seller_steps'%>">
+                <%= link_to "Seller", seller_steps_path %></li>
               <li><%= link_to "How It Works" %></li>
               <li class="<%= 'active' if params[:action] == 'search'%>">
                 <%= link_to "Search" %>

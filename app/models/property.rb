@@ -8,9 +8,11 @@ class Property < ApplicationRecord
 
   has_many :pictures
 
+  Title_company = ['Land Title Company', 'Chicago Title Company', 'First American Title And Insurance Company'].freeze
+
   # validations  
-  validates :full_bedrooms, :full_baths, :price, :partial_bedrooms, :partial_baths, :status, :sq_feet_area, :location, :name, presence: true
-  
+  validates :full_bedrooms, :full_baths, :partial_bedrooms, :partial_baths, :sq_feet_area, :location, presence: true
+  # validates :price, presence: true, on: :update
   # results per page
   paginates_per 5
 
