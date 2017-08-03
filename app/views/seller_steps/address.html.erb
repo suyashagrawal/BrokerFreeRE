@@ -34,25 +34,29 @@
             <%= f.text_field :address_line2, placeholder: "Address line no.2", class: 'form-control' %>
           </div>
 
-          <div class="form-group col-md-6 col-sm-6 pd-left mob-pad-right">
-            <div class="select-style">
-              <%= f.select(:country, options_for_select(countries), {}, { :class => 'country' }) %>
+          <div class="row row-margin">
+            <div class="form-group col-md-6 col-sm-6 pd-left mob-pad-right">
+              <div class="select-style">
+                <%= f.select(:country, options_for_select(countries, @location.country), { include_blank:  'Select Country' }, { required: true, :class => 'country' }) %>
+              </div>
             </div>
-          </div>
 
-          <div class="form-group col-md-6 col-sm-6 pd-right mob-pad-left">
-            <div class="select-style">
-              <%= f.select :state, options_for_select(""), prompt:'State', class: 'form-control', id: "location_state", required: true %>
+            <div class="form-group col-md-6 col-sm-6 pd-right mob-pad-left">
+              <div class="select-style">
+                <%= f.select :state, options_for_select("", @location.state), prompt:'State', class: 'form-control', id: "location_state", required: true %>
+              </div>
             </div>
-          </div>
+          </div>  
 
-          <div class="form-group col-md-6 col-sm-6 pd-left mob-pad-right">
-            <%= f.text_field :city, placeholder: 'City', class: 'form-control', required: true %>
-          </div>
+          <div class="row row-margin margin-top-country">
+            <div class="form-group col-md-6 col-sm-6 pd-left mob-pad-right">
+              <%= f.text_field :city, placeholder: 'City', class: 'form-control', required: true %>
+            </div>
 
-          <div class="form-group col-md-6 col-sm-6 pd-right mob-pad-left">
-            <%= f.text_field :zipcode, placeholder: 'Zipcode', class: 'form-control' , required: true %>
-          </div>
+            <div class="form-group col-md-6 col-sm-6 pd-right mob-pad-left">
+              <%= f.text_field :zipcode, placeholder: 'Zipcode', class: 'form-control' , required: true %>
+            </div>
+          </div>  
 
           <div class="button-section">
             <%= f.submit "Continue", class: 'btn btn-primary continue-btn' %>
@@ -75,6 +79,9 @@
       "location[zipcode]": {
         required: true,
         digits: true
+      },
+      "location[country]": {
+        required: true
       }
     }
   });

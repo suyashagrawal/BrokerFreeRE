@@ -50,7 +50,7 @@
           <div class="row row-margin">
             <div class="form-group col-md-6 col-sm-6 pd-left mob-pad-right">
               <div class="select-style">
-                <%= select_tag :country, options_for_select(countries), prompt:'Select Country', class: 'form-control country', name: 'location[country]', required: true, value: @location.country %>
+                <%= select_tag :country, options_for_select(countries, @location.country), prompt:'Select Country', class: 'form-control country', name: 'location[country]', required: true %>
               </div>
             </div>
 
@@ -61,7 +61,7 @@
             </div>
           </div>  
 
-          <div class="row row-margin">
+          <div class="row row-margin margin-top-country">
             <div class="form-group col-md-6 col-sm-6 pd-left mob-pad-right">
               <%= text_field_tag :city, nil, placeholder: "City", class: 'form-control', name: 'location[city]', required: true, value: @location.city %>
             </div>
