@@ -7,6 +7,7 @@ class Property < ApplicationRecord
   has_one :additional_feature
 
   has_many :pictures
+  accepts_nested_attributes_for :pictures
 
   Title_company = ['Land Title Company', 'Chicago Title Company', 'First American Title And Insurance Company'].freeze
 

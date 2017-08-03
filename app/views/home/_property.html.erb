@@ -3,6 +3,8 @@
     <div class="search-property-img">
       <% if property.pictures.first.try(:picture).present? %>
         <%= link_to image_tag(property.pictures.first.try(:picture)), property_path(property), class: "img-responsive"  %>
+      <% else %>
+        <%= link_to image_tag(PictureUploader.default_url), property_path(property), class: "img-responsive" %>
       <% end  %>
       <% if property.rent.present? %>
         <p class="property-status">Rent</p>

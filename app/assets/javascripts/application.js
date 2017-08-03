@@ -17,6 +17,7 @@
 //= require property_images
 //= require country_state
 //= require validate_wizard
+//= require image_upload_button
 //= require twitter/bootstrap
 //= require rails-ujs
 //= require_tree .
