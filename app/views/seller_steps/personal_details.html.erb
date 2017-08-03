@@ -26,7 +26,7 @@
       <div class="create-profile">
         <h3>Create Your Profile</h3>
         <h4>Personal Detail</h4>
-        <%= form_tag("#{wizard_path}", method: :patch, class: 'presonal-form') do %>
+        <%= form_tag("#{wizard_path}", method: :patch, class: 'personal-form validate-wizard') do %>
           <div class="row row-margin">
             <div class="form-group col-md-6 col-sm-6 pd-left mob-pad-right">
               <%= text_field_tag :first_name, nil, placeholder: "Legal First Name", class: 'form-control', name: 'seller[first_name]', required: true, value: @seller.first_name %>
@@ -89,20 +89,6 @@
     </div>
 
     <!-- Enquiry Form -->
-      <%= render 'home/search_form' %>
+    <%= render 'home/search_form' %>
   </div>
 </div> <!-- container -->
-
-<script type="text/javascript">
-  $(".presonal-form").validate({
-    rules: {
-      "seller[email]": {
-        email: true,
-      },
-      "seller[contact]": {
-        required: true,
-        digits: true
-      }
-    }
-  });
-</script>

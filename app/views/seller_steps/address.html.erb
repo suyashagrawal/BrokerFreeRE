@@ -21,7 +21,7 @@
         <h3>Create Your Profile</h3>
         <h4>What's the listing Address</h4>
 
-        <%= form_for :location, url: wizard_path, method: :patch, html: { class: 'address-form' } do |f| %>
+        <%= form_for :location, url: wizard_path, method: :patch, html: { class: 'address-form validate-wizard' } do |f| %>
 
           <div class="form-group">
             <%= f.text_field :address_line1, placeholder: "Address line no.1", class: 'form-control', required: true %>
@@ -72,18 +72,3 @@
   </div>
 
 </div> <!-- container -->
-
-<script type="text/javascript">
-  $( ".address-form" ).validate({
-    rules: {
-      "location[zipcode]": {
-        required: true,
-        digits: true
-      },
-      "location[country]": {
-        required: true
-      }
-    }
-  });
-
-</script>

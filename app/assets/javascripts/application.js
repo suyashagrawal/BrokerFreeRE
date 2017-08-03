@@ -16,6 +16,7 @@
 //= require jquery.validate
 //= require property_images
 //= require country_state
+//= require validate_wizard
 //= require twitter/bootstrap
 //= require rails-ujs
 //= require_tree .

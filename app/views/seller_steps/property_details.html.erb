@@ -28,7 +28,7 @@
       <div class="create-profile">
         <h3>Create Your Profile</h3>
         <h4>Tell Us About Your Home</h4>
-        <%= form_for :property, url: wizard_path, method: :patch, html: { class: 'property-form' } do |f| %>
+        <%= form_for :property, url: wizard_path, method: :patch, html: { class: 'property-form validate-wizard' } do |f| %>
           <div class="form-group custom-file">
             <input type="file" name="img[]" class="file">
             <div class="input-group col-xs-12">
@@ -107,24 +107,6 @@
   </div>
 </div> <!-- container -->
 
-<script type="text/javascript">
-  $(".property-form").validate({
-    rules: {
-      "property[sq_feet_area]": {
-        required: true,
-        number: true
-      },
-      "property[full_bedrooms]": {
-        required: true,
-        digits: true
-      },
-      "property[full_baths]": {
-        required: true,
-        digits: true
-      }
-    }
-  });
-</script>
 <script type="text/javascript">
   $(document).on('click', '.browse', function(){
     var file = $(this).parent().parent().parent().find('.file');

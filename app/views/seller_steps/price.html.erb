@@ -28,7 +28,7 @@
       <div class="create-profile">
         <h3>Enter Your Home Price</h3>
         <div class="form-inline home-price">
-          <%= form_for :property, url: wizard_path, method: :patch, html: { class: 'property-form' } do |f| %>
+          <%= form_for :property, url: wizard_path, method: :patch, html: { class: 'property-form validate-wizard' } do |f| %>
             <div class="form-group col-md-12 col-sm-12 col-xs-12 pd-none">
               <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
               <div class="input-group">

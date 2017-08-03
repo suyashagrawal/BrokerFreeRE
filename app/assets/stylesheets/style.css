@@ -1839,11 +1839,11 @@ search result Css Start here*/
   font-size: 16px;
   padding: 9px 50px;
 }
-.create-profile form.address-form label.error, form.presonal-form label.error, form.property-form label.error{
+.create-profile form.address-form label.error, form.personal-form label.error, form.property-form label.error{
   color: red;
   text-transform: none;
 }
-.create-profile form.address-form input, form.presonal-form input, form.property-form input{
+.create-profile form.address-form input, form.personal-form input, form.property-form input{
   background: none;
 }
 .margin-left-zero{
