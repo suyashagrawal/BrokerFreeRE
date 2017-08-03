@@ -18,5 +18,4 @@
 //= require country_state
 //= require twitter/bootstrap
 //= require rails-ujs
-//= require turbolinks
 //= require_tree .
