@@ -1,7 +1,7 @@
 class SellerStepsController < ApplicationController
 	include Wicked::Wizard
   steps :address, :personal_details, :property_details, :price, :earnest_money, :title_company, :payment, :thank_you
-  
+
   def show
     case params[:id]
     when 'address'
@@ -58,7 +58,7 @@ class SellerStepsController < ApplicationController
   end
 
   def property_params
-    params.require(:property).permit(:sq_feet_area, :finished_sq_feet, :built_year, :full_bedrooms, :full_baths, :partial_bedrooms, :partial_baths, :description, :property_type_id)
+    params.require(:property).permit(:sq_feet_area, :finished_sq_feet, :built_year, :full_bedrooms, :full_baths, :partial_bedrooms, :partial_baths, :description, :property_type_id, pictures_attributes: [:id, :picture_id, :picture])
   end
 
   def create_property_location
@@ -87,11 +87,16 @@ class SellerStepsController < ApplicationController
   def create_property
     if session[:property_id].present?
       @property = Property.where(id: session[:property_id]).first
-      @property.update(property_params)  
+      @property.update(property_params)
     else
       @property = Property.new(property_params)
       @property.location = Location.where(id: session[:location_id]).first
       session[:property_id] = @property.id if @property.save
+    end
+    if @property.save && params[:pictures].present?
+      params[:pictures]['picture'].each do |a|
+        @picture = @property.pictures.create!(:picture => a)
+      end
     end
     render_wizard @property
   end
@@ -123,8 +128,8 @@ class SellerStepsController < ApplicationController
   end
 
   def set_location
-    if session[:location_id].present? && Location.where(id: session[:location_id]).present?
-      Location.where(id: session[:location_id]).first
+    if session[:location_id].present?
+      Location.find(session[:location_id])
     else
       Location.new
     end
@@ -134,8 +139,10 @@ class SellerStepsController < ApplicationController
     if session[:property_id].present? && Property.where(id: session[:property_id]).present?
       Property.where(id: session[:property_id]).first
     else
-      Property.new
+      property = Property.new
+      @pictures = property.pictures.build
     end
+    property
   end
 
   def set_seller

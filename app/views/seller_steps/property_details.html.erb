@@ -28,15 +28,17 @@
       <div class="create-profile">
         <h3>Create Your Profile</h3>
         <h4>Tell Us About Your Home</h4>
-        <%= form_for :property, url: wizard_path, method: :patch, html: { class: 'property-form validate-wizard' } do |f| %>
+        <%= form_for :property, url: wizard_path, method: :patch, html: { multipart: true, class: 'property-form validate-wizard' } do |f| %>
           <div class="form-group custom-file">
-            <input type="file" name="img[]" class="file">
+            <%= f.fields_for :pictures do |p| %>
+              <%= p.file_field :picture, multiple: true, name: "pictures[picture][]", class: "hidden", id: 'file_upload' %>
+            <%end%>
             <div class="input-group col-xs-12">
-              <input type="text" class="form-control input-lg file-input" disabled placeholder="Upload Your Photo">
+              <div class="form-control input-lg file-input image-upload-div">
+               Upload your file
+              </div>
               <span class="input-group-btn">
-                <button class="browse" type="button">
-                  <%= image_tag("file-icon.png") %>
-                </button>
+                <button class="browse" type="button" id="upload_trigger"><%=image_tag("file-icon.png")%></button>
               </span>
             </div>
           </div>
@@ -59,7 +61,7 @@
                 FEET
               </div>
             </div>
-          </div>  
+          </div>
 
           <div class="row row-margin">
             <div class="form-group col-md-6 col-sm-6 pd-left mob-pad-right">
@@ -69,7 +71,7 @@
             <div class="form-group col-md-6 col-sm-6 pd-right mob-pad-left">
               <%= f.text_field :full_bedrooms, placeholder: "Enter no. of full bedrooms", class: 'form-control', required: true %>
             </div>
-          </div>  
+          </div>
 
           <div class="row row-margin">
             <div class="form-group col-md-6 col-sm-6 pd-left mob-pad-right">
@@ -79,7 +81,7 @@
             <div class="form-group col-md-6 col-sm-6 pd-right mob-pad-left">
               <%= f.text_field :partial_bedrooms, placeholder: "Enter no. of partial bedrooms", class: 'form-control' %>
             </div>
-          </div>  
+          </div>
 
           <div class="form-group col-md-6 col-sm-6 pd-left mob-pad-right">
             <%= f.text_field :partial_baths, placeholder: "Enter no. of partial bathrooms", class: 'form-control' %>
@@ -88,7 +90,7 @@
           <div class="form-group col-md-6 col-sm-6 pd-right mob-pad-left">
             <%= select_tag :property_type_id, options_for_select(PropertyType.all.collect {|u| [ u.name, u.id ] }), prompt: 'Select type', class: 'form-control', name: 'property[property_type_id]' %>
           </div>
-          
+
           <div class="form-group">
             <%= f.text_area :description, placeholder: "Property description", class: 'form-control' %>
           </div>
@@ -106,14 +108,3 @@
     <%= render 'home/search_form' %>
   </div>
 </div> <!-- container -->
-
-<script type="text/javascript">
-  $(document).on('click', '.browse', function(){
-    var file = $(this).parent().parent().parent().find('.file');
-    file.trigger('click');
-  });
-  $(document).on('change', '.file', function(){
-    $(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, ''));
-  });
-</script>
-  
