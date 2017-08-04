@@ -31,12 +31,14 @@
           <%= form_for :property, url: wizard_path, method: :patch, html: { class: 'property-form validate-wizard' } do |f| %>
             <div class="form-group col-md-12 col-sm-12 col-xs-12 pd-none">
               <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
-              <div class="input-group">
+              <div class="input-group col-md-9">
                 <%= f.text_field :price, placeholder: "Enter Amount", class: 'form-control' %>
-                <div class="input-group-addon">Dollar ($)</div>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-3 pd-none feet pull-right">
+                Dollar ($)
               </div>
             </div>
-            
+
             <div class="button-section">
               <%= f.submit "Continue", class: 'btn btn-primary continue-btn' %>
               <%= link_to "Cancel", cancel_seller_steps_path,  class: 'btn btn-danger cancel-btn' %>
