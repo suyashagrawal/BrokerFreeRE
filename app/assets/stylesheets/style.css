@@ -1888,3 +1888,60 @@ search result Css Start here*/
 .image-preview img {
   margin: 1px;
 }
+
+/* modal Css */
+
+.map-modal .modal-content{
+  background: #333333;
+  border-radius: 0px;
+}
+.map-modal .modal-body{
+  padding: 15px 25px 30px;
+}
+.map-modal .modal-body h1{
+  color: #fff;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 30px;
+}
+.map-modal .modal-body p{
+  color: #588080;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+}
+/*.map-modal .modal-body .modal-btn {
+  background: url("../images/bg-button.png");
+  background-size: 100% 100%;
+  height: 60px;
+  margin-right: 25px;
+  margin-left: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;*/
+.map-modal .modal-body .modal-btn {
+  background-color: #92ad12;
+  border: 0 none;
+  width: 13.5cm;
+  margin-left: 20px;
+  border-radius: 0;
+  color: #fff;
+  font-size: 18px;
+  height: 60px;
+}
+.map-modal .modal-body .modal-btn a:hover {
+  text-decoration: none;
+}
+
+#valuation-text{
+  color: #C1BD3C
+}
+
+.map-modal .modal-body input{
+  border-radius: 6px;
+}
+.map-modal .modal-body label{
+  text-transform: none;
+  font-weight: bold;
+  font-size: 16px;
+}

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/sale', to: 'home#sale', as: 'sale'
 
   resources :properties, only: :show
+  resources :property_valuations
   resources :seller_steps do
   	collection do
   		get :cancel

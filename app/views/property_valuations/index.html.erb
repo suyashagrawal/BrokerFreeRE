@@ -1,0 +1,115 @@
+
+<button type="button" class="btn btn-primary modal-button" data-toggle="modal" data-target="#homeWorthModal">Know your Home Worth</button>
+<div class="modal map-modal fade" id="homeWorthModal" tabindex="-1" role="dialog" aria-labelledby="homeWorthModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h1>Yes, Analyze My Property Value</h1>
+        <p class="analyze">Click the button To Enter Address</p>
+        <div>
+        <button type="button" class="modal-btn" data-toggle="modal" data-target="#addressModal">What Is My Home Worth</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal map-modal fade" id="addressModal" tabindex="-1" role="dialog" aria-labelledby="addressModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h1> Please Enter the
+          <span id="valuation-text">
+            Property Address
+          </span>
+          You Want Analyzed
+        </h1>
+        <div class="row">
+          <div class="form-group col-md-12 col-xs-12 col-sm-4">
+            <%= text_field_tag :test, nil, placeholder: "Address, City",class: 'form-control' %>
+          </div>
+        </div>
+        <div>
+          <button type="button" class="modal-btn" data-toggle="modal" data-target="#sendModal">What Is My Home Worth</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal map-modal fade" id="sendModal" tabindex="-1" role="dialog" aria-labelledby="sendModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h1> Please Send
+          <span id="valuation-text">
+            My Property Valuation
+          </span>
+        </h1>
+        <div class="row">
+          <div class="form-group col-md-12 col-xs-12 col-sm-4">
+            <%= text_field_tag :test, nil, class: 'form-control' %>
+            <label>
+              <%= check_box_tag :check %>
+              Email permission(Yes, I want to recieve my Property valuation by email)
+            </label>
+          </div>
+        </div>
+        <div>
+          <button type="button" class="modal-btn" data-toggle="modal" data-target="#acurateValuationModal">What Is My Home Worth</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal map-modal fade" id="acurateValuationModal" tabindex="-1" role="dialog" aria-labelledby="acurateValuationModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h1> For a more Accurate
+          <span id="valuation-text">
+            Property Valuation
+          </span>
+        </h1>
+        <div class="row">
+          <div class="form-group col-md-12 col-xs-12 col-sm-4">
+            <%= label_tag("Property Condition")  %>
+            <%= text_field_tag :test, nil, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-12 col-xs-12 col-sm-4">
+            <%= label_tag("What else would you like us to know?")  %>
+            <%= text_field_tag :test, nil, placeholder: "Age,update,extra Amenities?perhaps there was a recent reno", class: 'form-control' %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-md-12 col-xs-12 col-sm-4">
+            <%= label_tag("When do you want to sell?")  %>
+            <%= text_field_tag :test, nil, class: 'form-control' %>
+          </div>
+        </div>
+
+          <button type="button" class="modal-btn" data-toggle="modal" data-target="#sendModal">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="googleMap" style="width:100%;height:800px;"></div>
+
+<script>
+  function myMap() {
+    var mapProp= {
+        center:new google.maps.LatLng(39.113014,-105.358887),
+        zoom:5,
+    };
+    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+  }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbQeVx51JnI1_QIiaUmGaDY-6VtM3JWaU&q&callback=myMap"></script>
+
