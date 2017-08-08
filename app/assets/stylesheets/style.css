@@ -1882,3 +1882,9 @@ search result Css Start here*/
   left: 21px;
   width: 157px;
 }
+.image-preview{
+  margin-bottom: 10px;
+}
+.image-preview img {
+  margin: 1px;
+}
