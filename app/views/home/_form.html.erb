@@ -15,7 +15,7 @@
       <%= label_tag :type %>
       <div class="dropdown expensive">
         <%= select_tag :type, options_for_select(PropertyType.all.map(&:name)), prompt: 'Select type', class: 'form-control' %>
-        <span class="caret"></span>             
+        <span class="caret"></span>
       </div>
     </div>
 
@@ -42,8 +42,8 @@
     <div class="form-group col-md-2 col-xs-12 col-sm-2">
       <%= label_tag :bathrooms %>
       <div class="dropdown room_select">
-        <%= select_tag :bath, options_for_select(options_for_bed_and_bath), prompt: 'Any', class: 'form-control' %>   
-        <span class="caret"></span>        
+        <%= select_tag :bath, options_for_select(options_for_bed_and_bath), prompt: 'Any', class: 'form-control' %>
+        <span class="caret"></span>
       </div>
     </div>
 
@@ -58,7 +58,7 @@
     </div>
 
     <div class="col-md-4 col-xs-12 col-sm-4">
-      <%= button_tag 'Search property Now!', type: 'submit', class: 'btn btn-default search-property-btn' %>
+      <%= button_tag 'Search Homes Now!', type: 'submit', class: 'btn btn-default search-property-btn' %>
     </div>
-  </div>          
+  </div>
 <% end %>

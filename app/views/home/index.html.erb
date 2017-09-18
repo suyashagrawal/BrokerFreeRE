@@ -3,11 +3,11 @@
     <div class="banner-images">
       <%= image_tag("banner_img.png", alt: "banner_image") %>
       <p class="slider-text full-width">
-        "WE ARE TRANSFORMING THE WAY YOU BUY AND SELL REAL ESTATE"
+        WE ARE TRANSFORMING THE WAY YOU BUY AND SELL REAL ESTATE
       </p>
       <div class="full-width">
         <div class="detail-form">
-          <div class="form-margin"> 
+          <div class="form-margin">
             <div class="form-bg-color">
               <%= render 'form' %>
             </div>
@@ -24,9 +24,7 @@
       <li class="">
         <div class="property-image">
           <%= image_tag("img2.png", alt: "property-image1") %>
-          <p class="property-head">
-            What is your home worth
-          </p>
+          <%= link_to 'What is your home worth', property_valuations_path, {class: "property-head"} %>
         </div>
 
         <div class="property-detail">
@@ -46,7 +44,7 @@
 
         <div class="property-detail">
           <p>
-            BrokerFreeRE offers real estate industry level service at a fraction of the cost! Need additional help ? 
+            BrokerFreeRE offers real estate industry level service at a fraction of the cost! Need additional help ?
             Talk to a licensed real estate agent on demand for free!
           </p>
         </div>
@@ -62,7 +60,7 @@
 
         <div class="property-detail">
           <p>
-            Search, message sellers, and submit offers for FREE! Need additional help? 
+            Search, message sellers, and submit offers for FREE! Need additional help?
             Talk to a licensed real estate agent and get help with a contract to purchase on demand for free!
           </p>
         </div>
@@ -116,7 +114,7 @@
         <div class="carousel-inner" role="listbox">
 
           <div class="item active">
-            <p class="testimonial-heading">first some word from our customer</p>
+            <p class="testimonial-heading">CUSTOMER TESTIMONIALS</p>
             <p class="testimonial-paragraph">We are two real estate professionals who had an idea to bring the home buying and selling process into the 21st Century. You get all the bells and whistles of working with a licensed real estate agent at 1% of the cost.</p>
             <div class="testimonial-img">
               <%= image_tag("comment.png", alt: "comment_img") %>
@@ -127,20 +125,7 @@
 
           <div class="item">
 
-            <p class="testimonial-heading">second some word from our customer</p>
-            <p class="testimonial-paragraph">We are two real estate professionals who had an idea to bring the home buying and selling process into the 21st Century. You get all the bells and whistles of working with a licensed real estate agent at 1% of the cost.</p>
-
-            <div class="testimonial-img">
-              <%= image_tag("comment.png", alt: "comment_img") %>
-            </div>
-
-            <p class="testimonial-name">Mitchell Warner</p>
-            <p class="testimonial-city">Sydney, Austraila</p>
-          </div>
-
-          <div class="item">
-
-            <p class="testimonial-heading">third some word from our customer</p>
+            <p class="testimonial-heading">CUSTOMER TESTIMONIALS</p>
             <p class="testimonial-paragraph">We are two real estate professionals who had an idea to bring the home buying and selling process into the 21st Century. You get all the bells and whistles of working with a licensed real estate agent at 1% of the cost.</p>
 
             <div class="testimonial-img">
@@ -152,7 +137,8 @@
           </div>
 
           <div class="item">
-            <p class="testimonial-heading">fourth some word from our customer</p>
+
+            <p class="testimonial-heading">CUSTOMER TESTIMONIALS</p>
             <p class="testimonial-paragraph">We are two real estate professionals who had an idea to bring the home buying and selling process into the 21st Century. You get all the bells and whistles of working with a licensed real estate agent at 1% of the cost.</p>
 
             <div class="testimonial-img">
@@ -162,7 +148,19 @@
             <p class="testimonial-name">Mitchell Warner</p>
             <p class="testimonial-city">Sydney, Austraila</p>
           </div>
-        </div>  
+
+          <div class="item">
+            <p class="testimonial-heading">CUSTOMER TESTIMONIALS</p>
+            <p class="testimonial-paragraph">We are two real estate professionals who had an idea to bring the home buying and selling process into the 21st Century. You get all the bells and whistles of working with a licensed real estate agent at 1% of the cost.</p>
+
+            <div class="testimonial-img">
+              <%= image_tag("comment.png", alt: "comment_img") %>
+            </div>
+
+            <p class="testimonial-name">Mitchell Warner</p>
+            <p class="testimonial-city">Sydney, Austraila</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -174,11 +172,11 @@
       <div class="slide"><%= image_tag("time.png") %></div>
       <div class="slide"><%= image_tag("forbes.png") %></div>
       <div class="slide"><%= image_tag("businessweek.png") %></div>
-      <div class="slide"><%= image_tag("fastcompany.png") %></div>     
+      <div class="slide"><%= image_tag("fastcompany.png") %></div>
     </div>
   </div>
 </section>
 
 <script type="text/javascript">
-  
+
 </script>
