@@ -13,6 +13,7 @@ $(document).ready(function(){
       type: "GET",
       data: {country_name: $('.country option:selected').text()},
       success: function(data) {
+        window.data = data.states
         autocomplete_state(data.states);
       }
     });
@@ -23,5 +24,9 @@ $(document).ready(function(){
       source: states
     });
   }
+  $("#location_state").change(function(event){
+  if (data.indexOf($(this).val()) == -1)
+    $(this).val("")
+  });
 });
 

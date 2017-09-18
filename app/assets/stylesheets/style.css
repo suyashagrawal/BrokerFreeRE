@@ -1281,9 +1281,10 @@ search result Css Start here*/
   z-index: 999;
   padding: 10px;
   background-color: #fff;
-  width: 333px;
+  width: 358px;
   background: #e6e6e6;
   cursor: pointer;
+  list-style-type: none;
 }
 
 .property-images{
