@@ -2,7 +2,7 @@ $(document).ready(function(){
   if ($('.country option:selected').text() != 'Select Country'){
     getStates();
   }
-  
+
   $('.country').change(function(){
     getStates();
   });
@@ -13,16 +13,15 @@ $(document).ready(function(){
       type: "GET",
       data: {country_name: $('.country option:selected').text()},
       success: function(data) {
-        var a = data.states.map(function (value) {
-          return '<option value="' + value + '">' + value + '</option>' 
-        }).join();
-        $('#location_state').empty()
-        if(a !== ''){
-          $('#location_state').append(a);
-        }else{
-          $('#location_state').append("<option>Invalid Option</option>");
-        }
+        autocomplete_state(data.states);
       }
+    });
+  };
+
+  function autocomplete_state(states) {
+    $("#location_state").autocomplete({
+      source: states
     });
   }
 });
+

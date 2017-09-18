@@ -45,21 +45,21 @@
             <div class="form-group col-md-6 col-sm-6 pd-right mob-pad-left">
               <%= text_field_tag :address_line1, nil, placeholder: "Current Address", class: 'form-control', name: 'location[address_line1]', required: true, value: @location.address_line1 %>
             </div>
-          </div>  
+          </div>
 
           <div class="row row-margin">
             <div class="form-group col-md-6 col-sm-6 pd-left mob-pad-right">
               <div class="select-style">
-                <%= select_tag :country, options_for_select(countries, @location.country), prompt:'Select Country', class: 'form-control country', name: 'location[country]', required: true %>
+                <%= select_tag :country, options_for_select(options_for_select(countries.map(&:name).select{|e| e == "United States of America" || e == "Canada"}, @location.country), @location.country), prompt:'Select Country', class: 'form-control country', name: 'location[country]', required: true %>
               </div>
             </div>
 
             <div class="form-group col-md-6 col-sm-6 pd-right mob-pad-left">
-              <div class="select-style">
-                <%= select_tag :state, options_for_select(""), prompt:'State', class: 'form-control', id: "location_state", name: 'location[state]', required: true, value: @location.state %>
+              <div>
+                <%= text_field_tag :state, options_for_select(""), prompt:'State', class: 'form-control', id: "location_state", name: 'location[state]', required: true %>
               </div>
             </div>
-          </div>  
+          </div>
 
           <div class="row row-margin margin-top-country">
             <div class="form-group col-md-6 col-sm-6 pd-left mob-pad-right">
@@ -69,7 +69,7 @@
             <div class="form-group col-md-6 col-sm-6 pd-right mob-pad-left">
               <%= text_field_tag :zipcode, nil, placeholder: "Zipcode", class: 'form-control', name: 'location[zipcode]', required: true, value: @location.zipcode %>
             </div>
-          </div>  
+          </div>
 
           <div class="form-group col-md-6 col-sm-6 pd-left mob-pad-right">
             <%= text_field_tag :contact, nil, placeholder: "Primary phone number", class: 'form-control', name: 'seller[contact]', value: @seller.contact %>
